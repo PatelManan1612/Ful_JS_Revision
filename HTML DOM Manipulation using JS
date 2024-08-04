@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Manipulation</title>
+    <style>
+        #myDiv {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- Initial HTML elements -->
+    <div id="myDiv">Original Content</div>
+    <img id="myImage" src="original.jpg" alt="Original Image" width="100">
+    <button onclick="changeContent()">Change Content</button>
+    <button onclick="changeAttribute()">Change Attribute</button>
+    <button onclick="changeStyle()">Change Style</button>
+
+    <script>
+        // Function to change the HTML content of the div
+        function changeContent() {
+            // Get the div element by its ID
+            const myDiv = document.getElementById('myDiv');
+            // Change its inner HTML content
+            myDiv.innerHTML = 'Updated Content';
+        }
+
+        // Function to change the src attribute of the image
+        function changeAttribute() {
+            // Get the image element by its ID
+            const myImage = document.getElementById('myImage');
+            // Change the src attribute value
+            myImage.src = 'updated.jpg';
+            // Optionally, update the alt attribute as well
+            myImage.alt = 'Updated Image';
+        }
+
+        // Function to change the CSS style of the div
+        function changeStyle() {
+            // Get the div element by its ID
+            const myDiv = document.getElementById('myDiv');
+            // Change its CSS style properties
+            myDiv.style.backgroundColor = 'lightgreen'; // Change background color
+            myDiv.style.width = '300px'; // Change width
+            myDiv.style.height = '150px'; // Change height
+        }
+    </script>
+</body>
+</html>
