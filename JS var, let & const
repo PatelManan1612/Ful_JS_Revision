@@ -1,0 +1,84 @@
+
+### 1. Automatic (Undeclared) Variables
+
+When a variable is assigned a value without declaring it with `var`, `let`, or `const`, it becomes a global variable. This is generally considered bad practice because it can lead to unexpected behavior.
+
+```javascript
+function autoVariable() {
+    x = 10; // Automatically becomes a global variable
+    console.log(x); // Logs 10
+}
+
+autoVariable();
+console.log(x); // Logs 10, accessible globally
+```
+
+### 2. `var`
+
+`var` is function-scoped, which means it is scoped to the function in which it is declared. It is also subject to hoisting, where the declaration is moved to the top of its scope but not the assignment.
+
+```javascript
+function varExample() {
+    console.log(a); // undefined, due to hoisting
+    var a = 5;
+    console.log(a); // Logs 5
+}
+
+varExample();
+console.log(a); // ReferenceError: a is not defined, as `var` is function-scoped
+```
+
+### 3. `let`
+
+`let` is block-scoped, which means it is limited to the block (curly braces) in which it is declared. It is not hoisted like `var`, so it must be declared before use.
+
+```javascript
+function letExample() {
+    if (true) {
+        let b = 10;
+        console.log(b); // Logs 10
+    }
+    // console.log(b); // ReferenceError: b is not defined, as `let` is block-scoped
+}
+
+letExample();
+```
+
+### 4. `const`
+
+`const` is also block-scoped and must be initialized at the time of declaration. It cannot be reassigned, but the properties of objects declared with `const` can be changed.
+
+```javascript
+function constExample() {
+    const c = 20;
+    console.log(c); // Logs 20
+
+    // c = 25; // TypeError: Assignment to constant variable
+
+    const obj = { key: 'value' };
+    console.log(obj.key); // Logs 'value'
+    
+    obj.key = 'newValue'; // Allowed, properties of objects can be changed
+    console.log(obj.key); // Logs 'newValue'
+}
+
+constExample();
+```
+
+### Differences
+
+- **Scope**:
+  - `var`: Function-scoped
+  - `let` and `const`: Block-scoped
+
+- **Hoisting**:
+  - `var`: Declarations are hoisted (moved to the top of the scope)
+  - `let` and `const`: Not hoisted in the same way, must be declared before use
+
+- **Reassignment**:
+  - `var` and `let`: Can be reassigned
+  - `const`: Cannot be reassigned
+
+- **Initialization**:
+  - `var` and `let`: Can be declared without initialization
+  - `const`: Must be initialized at the time of declaration
