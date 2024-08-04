@@ -1,0 +1,170 @@
+There are several ways to add JavaScript to an HTML document. Here are the main methods with code snippets for each:
+
+### 1. Inline JavaScript
+JavaScript code can be added directly within an HTML element's attribute, like `onclick`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline JavaScript Example</title>
+</head>
+<body>
+    <button onclick="alert('Hello, World!')">Click Me</button>
+</body>
+</html>
+```
+
+### 2. Internal JavaScript
+JavaScript code can be placed within a `<script>` tag inside the HTML document, usually within the `<head>` or `<body>` section.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internal JavaScript Example</title>
+    <script>
+        function showMessage() {
+            alert('Hello, World!');
+        }
+    </script>
+</head>
+<body>
+    <button onclick="showMessage()">Click Me</button>
+</body>
+</html>
+```
+
+### 3. External JavaScript
+JavaScript code can be written in a separate file with a `.js` extension and linked to the HTML document using the `<script>` tag with the `src` attribute.
+
+#### HTML File
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>External JavaScript Example</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <button onclick="showMessage()">Click Me</button>
+</body>
+</html>
+```
+
+#### External JavaScript File (script.js)
+```javascript
+function showMessage() {
+    alert('Hello, World!');
+}
+```
+
+### 4. JavaScript in the Head and Body
+JavaScript can be included in both the `<head>` and `<body>` sections of the HTML document.
+
+#### HTML File
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Head and Body JavaScript Example</title>
+    <script>
+        function showHeadMessage() {
+            console.log('Script in the head section');
+        }
+    </script>
+</head>
+<body>
+    <button onclick="showBodyMessage()">Click Me</button>
+    <script>
+        function showBodyMessage() {
+            alert('Script in the body section');
+        }
+    </script>
+    <script>
+        showHeadMessage();
+    </script>
+</body>
+</html>
+```
+
+### 5. JavaScript in Event Handlers
+JavaScript can be added directly to HTML elements through event handler attributes like `onclick`, `onload`, `onmouseover`, etc.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handler JavaScript Example</title>
+</head>
+<body>
+    <img src="image.jpg" alt="Image" onmouseover="alert('Mouse over the image!')">
+</body>
+</html>
+```
+
+### 6. Using `document.write()`
+JavaScript can be used to write directly to the HTML document, though this method is generally not recommended for modern web development.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Write Example</title>
+    <script>
+        document.write('This is written using JavaScript.');
+    </script>
+</head>
+<body>
+</body>
+</html>
+```
+
+### 7. Immediately Invoked Function Expressions (IIFE)
+JavaScript code can be executed immediately within a function that runs as soon as it is defined.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IIFE JavaScript Example</title>
+</head>
+<body>
+    <script>
+        (function() {
+            alert('This is an IIFE!');
+        })();
+    </script>
+</body>
+</html>
+```
+
+### 8. Using `addEventListener`
+JavaScript can be added to HTML elements dynamically using the `addEventListener` method.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Event Listener Example</title>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+    <script>
+        document.getElementById('myButton').addEventListener('click', function() {
+            alert('Button clicked!');
+        });
+    </script>
+</body>
+</html>
+```
+
+Each of these methods provides different ways to include and execute JavaScript code in your HTML document, giving you flexibility in how you manage and structure your scripts.
