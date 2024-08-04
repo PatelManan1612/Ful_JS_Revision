@@ -1,0 +1,24 @@
+
+### 1. Single-Line Comments
+
+Single-line comments start with `//`. Everything following `//` on that line is a comment and will not be executed by JavaScript.
+
+```javascript
+// This is a single-line comment
+let x = 10; // This is an inline comment after a statement
+console.log(x); // Logs 10 to the console
+```
+
+### 2. Multi-Line Comments
+
+Multi-line comments start with `/*` and end with `*/`. They can span multiple lines.
+
+```javascript
+/*
+This is a multi-line comment.
+It can span multiple lines.
+Useful for longer explanations or comment blocks.
+*/
+let y = 20;
+console.log(y); // Logs 20 to the console
+```
