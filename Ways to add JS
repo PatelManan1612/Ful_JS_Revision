@@ -1,4 +1,3 @@
-There are several ways to add JavaScript to an HTML document. Here are the main methods with code snippets for each:
 
 ### 1. Inline JavaScript
 JavaScript code can be added directly within an HTML element's attribute, like `onclick`.
@@ -166,5 +165,3 @@ JavaScript can be added to HTML elements dynamically using the `addEventListener
 </body>
 </html>
 ```
-
-Each of these methods provides different ways to include and execute JavaScript code in your HTML document, giving you flexibility in how you manage and structure your scripts.
