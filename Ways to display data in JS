@@ -1,0 +1,80 @@
+
+### 1. Writing into an HTML Element using `innerHTML`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML Example</title>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        // JavaScript code to change the inner HTML content of the div
+        document.getElementById('content').innerHTML = 'Hello, World!';
+    </script>
+</body>
+</html>
+```
+
+### 2. Writing into the HTML Output using `document.write()`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document.write() Example</title>
+</head>
+<body>
+    <script>
+        // JavaScript code to write directly into the HTML document
+        document.write('This is written using document.write()');
+    </script>
+</body>
+</html>
+```
+
+### 3. Writing into an Alert Box using `window.alert()`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>alert() Example</title>
+</head>
+<body>
+    <script>
+        // JavaScript code to display an alert box
+        window.alert('This is an alert box!');
+    </script>
+</body>
+</html>
+```
+
+### 4. Writing into the Browser Console using `console.log()`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>console.log() Example</title>
+</head>
+<body>
+    <script>
+        // JavaScript code to log a message to the browser console
+        console.log('This is logged to the console.');
+    </script>
+</body>
+</html>
+```
+
+These examples show how you can display data using different JavaScript methods:
+
+- **`innerHTML`**: Updates the content of an HTML element.
+- **`document.write()`**: Writes content directly to the HTML document.
+- **`window.alert()`**: Displays a message in an alert box.
+- **`console.log()`**: Outputs a message to the browser's console, useful for debugging.
