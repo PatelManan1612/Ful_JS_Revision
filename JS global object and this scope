@@ -1,0 +1,110 @@
+
+### `var` and `this` Binding
+
+Variables declared with `var` are function-scoped and are hoisted to the top of their containing function. In the global context, variables declared with `var` become properties of the global object (`window` in browsers).
+
+#### Example in Global Context
+
+```javascript
+var globalVar = "I am a global variable";
+
+console.log(window.globalVar); // Outputs: "I am a global variable"
+```
+
+#### Example in Function Context
+
+In a function, `var` variables are scoped to the entire function and `this` inside a function typically refers to the global object (in non-strict mode).
+
+```javascript
+function exampleFunction() {
+    var functionVar = "I am a function-scoped variable";
+
+    console.log(this.functionVar); // Outputs: undefined, since functionVar is not a property of `this`
+}
+
+exampleFunction();
+```
+
+#### Example with Object Method
+
+When `var` is used inside an object method, it does not bind to the object itself but to the function scope.
+
+```javascript
+var obj = {
+    value: 42,
+    logValue: function() {
+        var localVar = "I am local to logValue";
+
+        console.log(this.value); // Outputs: 42 (refers to obj.value)
+        console.log(this.localVar); // Outputs: undefined (localVar is not a property of `this`)
+    }
+};
+
+obj.logValue();
+```
+
+### `let` and `const` and `this` Binding
+
+Variables declared with `let` and `const` are block-scoped, meaning they are limited to the block in which they are defined. They do not get added as properties of the global object, even if declared in the global scope.
+
+#### Example in Global Context
+
+```javascript
+let globalLet = "I am a global let variable";
+const globalConst = "I am a global const variable";
+
+console.log(window.globalLet); // Outputs: undefined
+console.log(window.globalConst); // Outputs: undefined
+```
+
+#### Example in Function Context
+
+In a function, `let` and `const` variables are block-scoped and do not bind to the `this` object.
+
+```javascript
+function exampleFunction() {
+    let functionLet = "I am a block-scoped let variable";
+    const functionConst = "I am a block-scoped const variable";
+
+    console.log(this.functionLet); // Outputs: undefined
+    console.log(this.functionConst); // Outputs: undefined
+}
+
+exampleFunction();
+```
+
+#### Example with Object Method
+
+When `let` and `const` are used inside an object method, they are block-scoped and do not bind to the object itself.
+
+```javascript
+let obj = {
+    value: 42,
+    logValue: function() {
+        let localLet = "I am local to logValue";
+        const localConst = "I am local to logValue";
+
+        console.log(this.value); // Outputs: 42 (refers to obj.value)
+        console.log(this.localLet); // Outputs: undefined (localLet is not a property of `this`)
+        console.log(this.localConst); // Outputs: undefined (localConst is not a property of `this`)
+    }
+};
+
+obj.logValue();
+```
+
+### Summary
+
+- **`var`**:
+  - Function-scoped.
+  - Hoisted to the top of its containing function.
+  - In the global context, `var` variables become properties of the global object (`window` in browsers).
+  - Inside functions, `var` variables do not bind to `this`.
+
+- **`let` and `const`**:
+  - Block-scoped.
+  - Not hoisted in the same way as `var`.
+  - Do not become properties of the global object when declared in the global context.
+  - Do not bind to `this` inside functions or methods.
+
+Understanding these differences helps in writing more predictable and maintainable JavaScript code by making clear how variables interact with their scope and the `this` context.
