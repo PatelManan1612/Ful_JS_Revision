@@ -1,0 +1,119 @@
+### 1. Arithmetic Operators
+
+Arithmetic operators are used to perform mathematical operations.
+
+```javascript
+let a = 10;
+let b = 3;
+
+console.log(a + b); // Addition: Outputs 13
+console.log(a - b); // Subtraction: Outputs 7
+console.log(a * b); // Multiplication: Outputs 30
+console.log(a / b); // Division: Outputs 3.3333333333333335
+console.log(a % b); // Modulus (Remainder): Outputs 1
+console.log(a ** b); // Exponentiation: Outputs 1000
+console.log(++a); // Increment: Outputs 11 (a is now 11)
+console.log(--b); // Decrement: Outputs 2 (b is now 2)
+```
+
+### 2. Assignment Operators
+
+Assignment operators assign values to variables.
+
+```javascript
+let x = 5; // Assignment: x is 5
+x += 3;    // Addition assignment: x is now 8
+x -= 2;    // Subtraction assignment: x is now 6
+x *= 4;    // Multiplication assignment: x is now 24
+x /= 2;    // Division assignment: x is now 12
+x %= 5;    // Modulus assignment: x is now 2
+x **= 3;   // Exponentiation assignment: x is now 8 (2^3)
+```
+
+### 3. Comparison Operators
+
+Comparison operators compare two values and return a boolean (true or false).
+
+```javascript
+let y = 10;
+let z = "10";
+
+console.log(y == z);  // Equal to: Outputs true (loose comparison)
+console.log(y === z); // Strict equal to: Outputs false (different types)
+console.log(y != z);  // Not equal to: Outputs false (loose comparison)
+console.log(y !== z); // Strict not equal to: Outputs true (different types)
+console.log(y > 5);   // Greater than: Outputs true
+console.log(y < 5);   // Less than: Outputs false
+console.log(y >= 10); // Greater than or equal to: Outputs true
+console.log(y <= 10); // Less than or equal to: Outputs true
+```
+
+### 4. String Operators
+
+String operators are used to concatenate strings.
+
+```javascript
+let str1 = "Hello";
+let str2 = "World";
+
+console.log(str1 + " " + str2); // Concatenation: Outputs "Hello World"
+str1 += " Everyone";
+console.log(str1); // Outputs "Hello Everyone"
+```
+
+### 5. Logical Operators
+
+Logical operators are used to combine multiple conditions.
+
+```javascript
+let a = true;
+let b = false;
+
+console.log(a && b); // Logical AND: Outputs false (both conditions must be true)
+console.log(a || b); // Logical OR: Outputs true (one condition must be true)
+console.log(!a);     // Logical NOT: Outputs false (inverts the condition)
+```
+
+### 6. Bitwise Operators
+
+Bitwise operators perform operations on the binary representations of numbers.
+
+```javascript
+let c = 5; // 0101 in binary
+let d = 3; // 0011 in binary
+
+console.log(c & d); // Bitwise AND: Outputs 1 (0001 in binary)
+console.log(c | d); // Bitwise OR: Outputs 7 (0111 in binary)
+console.log(c ^ d); // Bitwise XOR: Outputs 6 (0110 in binary)
+console.log(~c);    // Bitwise NOT: Outputs -6 (inverts all bits)
+console.log(c << 1); // Left shift: Outputs 10 (1010 in binary)
+console.log(c >> 1); // Right shift: Outputs 2 (0010 in binary)
+console.log(c >>> 1); // Zero-fill right shift: Outputs 2 (0010 in binary)
+```
+
+### 7. Ternary Operator
+
+The ternary operator is a shorthand for the `if-else` statement.
+
+```javascript
+let age = 18;
+let canVote = (age >= 18) ? "Yes" : "No";
+
+console.log(canVote); // Outputs "Yes"
+```
+
+### 8. Type Operators
+
+Type operators are used to check or convert data types.
+
+```javascript
+console.log(typeof 123); // typeof: Outputs "number"
+console.log(typeof "Hello"); // typeof: Outputs "string"
+console.log(typeof true); // typeof: Outputs "boolean"
+console.log(typeof {}); // typeof: Outputs "object"
+console.log(typeof undefined); // typeof: Outputs "undefined"
+console.log(typeof null); // typeof: Outputs "object" (this is a quirk in JavaScript)
+
+let x = "5";
+console.log(x instanceof String); // instanceof: Outputs false (x is a string primitive, not a String object)
+```
