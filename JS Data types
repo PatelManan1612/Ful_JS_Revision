@@ -1,0 +1,113 @@
+
+### 1. String
+
+A `String` is used to represent textual data. It is enclosed in quotes (`'`, `"`, or `` ` ``).
+
+```javascript
+let name = "Manan Patel"; // Double quotes
+let greeting = 'Hello, World!'; // Single quotes
+let template = `Welcome, ${name}!`; // Template literal with embedded expression
+
+console.log(name); // Outputs: Manan Patel
+console.log(greeting); // Outputs: Hello, World!
+console.log(template); // Outputs: Welcome, Manan Patel!
+```
+
+### 2. Number
+
+A `Number` represents both integer and floating-point numbers.
+
+```javascript
+let integer = 42; // Integer
+let float = 3.14; // Floating-point number
+let exponential = 2e5; // Exponential notation
+
+console.log(integer); // Outputs: 42
+console.log(float); // Outputs: 3.14
+console.log(exponential); // Outputs: 200000
+```
+
+### 3. BigInt
+
+`BigInt` is used to represent integers that are too large to be represented by the `Number` type.
+
+```javascript
+let bigInt = 1234567890123456789012345678901234567890n; // The 'n' at the end denotes a BigInt
+
+console.log(bigInt); // Outputs: 1234567890123456789012345678901234567890n
+```
+
+### 4. Boolean
+
+A `Boolean` represents a logical entity and can have two values: `true` or `false`.
+
+```javascript
+let isStudent = true;
+let hasGraduated = false;
+
+console.log(isStudent); // Outputs: true
+console.log(hasGraduated); // Outputs: false
+```
+
+### 5. Undefined
+
+`Undefined` is a variable that has been declared but not assigned a value.
+
+```javascript
+let notAssigned;
+
+console.log(notAssigned); // Outputs: undefined
+```
+
+### 6. Null
+
+`Null` represents the intentional absence of any object value. It is an assignment value.
+
+```javascript
+let emptyValue = null;
+
+console.log(emptyValue); // Outputs: null
+```
+
+### 7. Symbol
+
+A `Symbol` is a unique and immutable data type, often used to identify object properties uniquely.
+
+```javascript
+let symbol1 = Symbol('description');
+let symbol2 = Symbol('description');
+
+console.log(symbol1); // Outputs: Symbol(description)
+console.log(symbol1 === symbol2); // Outputs: false (each symbol is unique)
+```
+
+### 8. Object
+
+An `Object` is a complex data type used to store collections of data and more complex entities. It is a collection of properties, where each property is a key-value pair.
+
+```javascript
+let person = {
+    firstName: "Manan",
+    lastName: "Patel",
+    age: 22,
+    isStudent: true,
+    greet: function() {
+        console.log(`Hello, my name is ${this.firstName} ${this.lastName}.`);
+    }
+};
+
+console.log(person.firstName); // Outputs: Manan
+console.log(person['age']); // Outputs: 22
+person.greet(); // Outputs: Hello, my name is Manan Patel.
+```
+
+### Summary of JavaScript Data Types
+
+1. **String**: Textual data, e.g., `"Hello, World!"`.
+2. **Number**: Integer or floating-point numbers, e.g., `42`, `3.14`.
+3. **BigInt**: Large integers beyond the safe integer limit, e.g., `1234567890123456789012345678901234567890n`.
+4. **Boolean**: Logical values `true` or `false`.
+5. **Undefined**: A variable that has been declared but not assigned a value.
+6. **Null**: Represents the absence of any value.
+7. **Symbol**: A unique, immutable primitive value, often used as object keys.
+8. **Object**: A collection of properties and methods, used to store more complex data and functionality.
