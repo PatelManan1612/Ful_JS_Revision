@@ -1,0 +1,74 @@
+
+### 1. Displaying the Object Properties by Name
+
+You can display specific properties of an object by directly accessing them using their names.
+
+#### Example:
+```javascript
+let person = {
+    firstName: "Manan",
+    lastName: "Patel",
+    age: 22
+};
+
+// Displaying the object properties by name
+console.log(person.firstName); // Outputs: Manan
+console.log(person.lastName);  // Outputs: Patel
+console.log(person.age);       // Outputs: 22
+```
+
+### 2. Displaying the Object Properties in a Loop
+
+You can loop through the properties of an object using a `for...in` loop.
+
+#### Example:
+```javascript
+let person = {
+    firstName: "Manan",
+    lastName: "Patel",
+    age: 22
+};
+
+// Displaying the object properties in a loop
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+// Outputs:
+// firstName: Manan
+// lastName: Patel
+// age: 22
+```
+
+### 3. Displaying the Object using `Object.values()`
+
+The `Object.values()` method returns an array of the object’s property values. You can then display these values.
+
+#### Example:
+```javascript
+let person = {
+    firstName: "Manan",
+    lastName: "Patel",
+    age: 22
+};
+
+// Displaying the object using Object.values()
+let values = Object.values(person);
+console.log(values); // Outputs: ["Manan", "Patel", 22]
+```
+
+### 4. Displaying the Object using `JSON.stringify()`
+
+The `JSON.stringify()` method converts a JavaScript object into a JSON string, which is easily displayable.
+
+#### Example:
+```javascript
+let person = {
+    firstName: "Manan",
+    lastName: "Patel",
+    age: 22
+};
+
+// Displaying the object using JSON.stringify()
+let jsonString = JSON.stringify(person);
+console.log(jsonString); // Outputs: {"firstName":"Manan","lastName":"Patel","age":22}
+```
