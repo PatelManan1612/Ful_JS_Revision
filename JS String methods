@@ -1,0 +1,183 @@
+
+### 1. String `length`
+
+The `length` property returns the length of a string.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.length); // Outputs: 13
+```
+
+### 2. String `charAt()`
+
+The `charAt()` method returns the character at a specified index in a string.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.charAt(0)); // Outputs: H
+```
+
+### 3. String `charCodeAt()`
+
+The `charCodeAt()` method returns the Unicode value of the character at a specified index.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.charCodeAt(0)); // Outputs: 72 (Unicode value of 'H')
+```
+
+### 4. String `at()`
+
+The `at()` method returns the character at a specified index, supporting negative indices.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.at(0));  // Outputs: H
+console.log(str.at(-1)); // Outputs: !
+```
+
+### 5. String `[]` (Bracket Notation)
+
+You can access a character in a string using bracket notation.
+
+```javascript
+let str = "Hello, World!";
+console.log(str[0]); // Outputs: H
+```
+
+### 6. String `slice()`
+
+The `slice()` method extracts a section of a string and returns it as a new string.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.slice(0, 5)); // Outputs: Hello
+```
+
+### 7. String `substring()`
+
+The `substring()` method returns a subset of a string between two indices.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.substring(0, 5)); // Outputs: Hello
+```
+
+### 8. String `substr()`
+
+The `substr()` method returns a part of a string, starting at a specified index and extending for a given number of characters.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.substr(0, 5)); // Outputs: Hello
+```
+
+### 9. String `toUpperCase()`
+
+The `toUpperCase()` method converts the entire string to uppercase letters.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.toUpperCase()); // Outputs: HELLO, WORLD!
+```
+
+### 10. String `toLowerCase()`
+
+The `toLowerCase()` method converts the entire string to lowercase letters.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.toLowerCase()); // Outputs: hello, world!
+```
+
+### 11. String `concat()`
+
+The `concat()` method concatenates (joins) two or more strings.
+
+```javascript
+let str1 = "Hello";
+let str2 = "World";
+console.log(str1.concat(", ", str2, "!")); // Outputs: Hello, World!
+```
+
+### 12. String `trim()`
+
+The `trim()` method removes whitespace from both ends of a string.
+
+```javascript
+let str = "   Hello, World!   ";
+console.log(str.trim()); // Outputs: Hello, World!
+```
+
+### 13. String `trimStart()`
+
+The `trimStart()` method removes whitespace from the beginning of a string.
+
+```javascript
+let str = "   Hello, World!   ";
+console.log(str.trimStart()); // Outputs: Hello, World!   
+```
+
+### 14. String `trimEnd()`
+
+The `trimEnd()` method removes whitespace from the end of a string.
+
+```javascript
+let str = "   Hello, World!   ";
+console.log(str.trimEnd()); // Outputs:    Hello, World!
+```
+
+### 15. String `padStart()`
+
+The `padStart()` method pads the current string with another string (repeated, if needed) so that the resulting string reaches the given length.
+
+```javascript
+let str = "5";
+console.log(str.padStart(4, "0")); // Outputs: 0005
+```
+
+### 16. String `padEnd()`
+
+The `padEnd()` method pads the current string with another string (repeated, if needed) so that the resulting string reaches the given length.
+
+```javascript
+let str = "5";
+console.log(str.padEnd(4, "0")); // Outputs: 5000
+```
+
+### 17. String `repeat()`
+
+The `repeat()` method returns a new string with a specified number of copies of the original string.
+
+```javascript
+let str = "Hello";
+console.log(str.repeat(3)); // Outputs: HelloHelloHello
+```
+
+### 18. String `replace()`
+
+The `replace()` method replaces a specified value with another value in a string. It only replaces the first occurrence unless you use a regular expression with the global flag.
+
+```javascript
+let str = "Hello, World!";
+console.log(str.replace("World", "Universe")); // Outputs: Hello, Universe!
+```
+
+### 19. String `replaceAll()`
+
+The `replaceAll()` method replaces all occurrences of a specified value with another value in a string.
+
+```javascript
+let str = "Hello, World! World!";
+console.log(str.replaceAll("World", "Universe")); // Outputs: Hello, Universe! Universe!
+```
+
+### 20. String `split()`
+
+The `split()` method splits a string into an array of substrings, based on a specified delimiter.
+
+```javascript
+let str = "Hello, World!";
+let result = str.split(", ");
+console.log(result); // Outputs: ["Hello", "World!"]
+```
