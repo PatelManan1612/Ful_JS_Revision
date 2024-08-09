@@ -1,0 +1,29 @@
+
+### Complete Example
+
+```javascript
+let person = {
+    firstName: "Manan",
+    lastName: "Patel",
+    age: 22
+};
+
+// Accessing properties
+console.log(person.firstName); // Manan
+
+// Adding properties
+person.email = "manan@example.com";
+person["address"] = "123 Main St";
+console.log(person.email); // manan@example.com
+console.log(person.address); // 123 Main St
+
+// Deleting a property
+delete person.age;
+console.log(person.age); // undefined
+```
+
+### Summary
+
+- **Access**: Use `object.property` or `object["property"]` to access an object's property.
+- **Add**: Use `object.newProperty = value` or `object["newProperty"] = value` to add a new property.
+- **Delete**: Use `delete object.property` to remove a property from the object.
