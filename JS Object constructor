@@ -1,0 +1,78 @@
+
+### 1. Object Constructor
+
+An object constructor is a function that creates and initializes objects. You define the object structure and behavior within the constructor function using `this` to refer to the object being created.
+
+#### Example:
+```javascript
+function Person(firstName, lastName, age) {
+    // Properties
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    
+    // Method
+    this.greet = function() {
+        return "Hello, my name is " + this.firstName + " " + this.lastName;
+    };
+}
+
+// Creating objects using the constructor
+let person1 = new Person("Manan", "Patel", 22);
+let person2 = new Person("John", "Doe", 30);
+
+console.log(person1.greet()); // Outputs: Hello, my name is Manan Patel
+console.log(person2.greet()); // Outputs: Hello, my name is John Doe
+```
+
+### 2. Default Property Values
+
+You can set default property values in the constructor by checking if the argument is provided. If not, you assign a default value.
+
+#### Example:
+```javascript
+function Person(firstName = "Unknown", lastName = "Unknown", age = 0) {
+    // Properties with default values
+    this.firstName = firstName || "Unknown";
+    this.lastName = lastName || "Unknown";
+    this.age = age || 0;
+    
+    // Method
+    this.greet = function() {
+        return "Hello, my name is " + this.firstName + " " + this.lastName;
+    };
+}
+
+// Creating objects with and without passing all arguments
+let person1 = new Person("Manan", "Patel", 22);
+let person2 = new Person(); // Using default values
+
+console.log(person1.greet()); // Outputs: Hello, my name is Manan Patel
+console.log(person2.greet()); // Outputs: Hello, my name is Unknown Unknown
+```
+
+### 3. Object Constructor Method
+
+Methods defined within an object constructor allow each object created by the constructor to have its own instance of the method.
+
+#### Example:
+```javascript
+function Car(brand, model, year) {
+    // Properties
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+    
+    // Method to return car details
+    this.getCarInfo = function() {
+        return this.brand + " " + this.model + " (" + this.year + ")";
+    };
+}
+
+// Creating objects using the constructor
+let car1 = new Car("Toyota", "Corolla", 2021);
+let car2 = new Car("Honda", "Civic", 2022);
+
+console.log(car1.getCarInfo()); // Outputs: Toyota Corolla (2021)
+console.log(car2.getCarInfo()); // Outputs: Honda Civic (2022)
+```
