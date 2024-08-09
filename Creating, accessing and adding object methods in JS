@@ -1,0 +1,35 @@
+
+### 4. Example: Creating, Accessing, and Adding Methods
+
+```javascript
+let person = {
+    firstName: "Manan",
+    lastName: "Patel",
+    // Method to return the full name
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+// Accessing the method
+console.log(person.fullName()); // Outputs: Manan Patel
+
+// Adding a new method to greet
+person.greet = function() {
+    console.log("Hello, " + this.firstName + "!");
+};
+
+// Accessing the new method
+person.greet(); // Outputs: Hello, Manan!
+```
+
+**Explanation**:  
+- **Creating**: The `fullName` method is defined within the `person` object.
+- **Accessing**: The method is accessed using `person.fullName()`.
+- **Adding**: The `greet` method is added to the `person` object after its creation and is then accessed using `person.greet()`.
+
+### Summary
+
+- **Creating Methods**: Define methods directly within the object using function expressions.
+- **Accessing Methods**: Use `object.methodName()` to call a method.
+- **Adding Methods**: Add methods to an existing object by assigning a function to a new property.
