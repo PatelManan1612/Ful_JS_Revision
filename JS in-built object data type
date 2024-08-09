@@ -1,0 +1,145 @@
+
+### 1. Object
+
+The `Object` type is the most basic object type in JavaScript, used to store collections of key-value pairs.
+
+```javascript
+let person = {
+    firstName: "Manan",
+    lastName: "Patel",
+    age: 22
+};
+
+console.log(person.firstName); // Outputs: Manan
+console.log(person["age"]); // Outputs: 22
+```
+
+### 2. Array
+
+An `Array` is a special type of object used to store ordered lists of values.
+
+```javascript
+let fruits = ["Apple", "Banana", "Cherry"];
+
+console.log(fruits[0]); // Outputs: Apple
+console.log(fruits.length); // Outputs: 3
+```
+
+### 3. Date
+
+The `Date` object is used to work with dates and times.
+
+```javascript
+let today = new Date();
+
+console.log(today); // Outputs: Current date and time
+console.log(today.getFullYear()); // Outputs: Current year
+```
+
+### 4. Map
+
+A `Map` is a collection of key-value pairs where keys can be of any type.
+
+```javascript
+let map = new Map();
+map.set("name", "Manan");
+map.set("age", 22);
+
+console.log(map.get("name")); // Outputs: Manan
+console.log(map.size); // Outputs: 2
+```
+
+### 5. Set
+
+A `Set` is a collection of unique values.
+
+```javascript
+let set = new Set();
+set.add(1);
+set.add(2);
+set.add(2); // Duplicate values are ignored
+
+console.log(set.size); // Outputs: 2
+console.log(set.has(1)); // Outputs: true
+```
+
+### 6. Typed Arrays (Int8Array, Uint8Array, etc.)
+
+Typed arrays provide a way to work with binary data in memory buffers.
+
+```javascript
+let intArray = new Int8Array([1, 2, 3, 4]);
+
+console.log(intArray[0]); // Outputs: 1
+console.log(intArray.length); // Outputs: 4
+```
+
+### 7. Float32Array and Float64Array
+
+Typed arrays for working with floating-point numbers.
+
+```javascript
+let floatArray = new Float32Array([1.1, 2.2, 3.3]);
+
+console.log(floatArray[0]); // Outputs: 1.100000023841858
+console.log(floatArray.length); // Outputs: 3
+```
+
+### 8. Promise
+
+A `Promise` is used to represent the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+```javascript
+let promise = new Promise(function(resolve, reject) {
+    let success = true;
+    if (success) {
+        resolve("Operation was successful!");
+    } else {
+        reject("Operation failed.");
+    }
+});
+
+promise.then(function(value) {
+    console.log(value); // Outputs: Operation was successful!
+}).catch(function(error) {
+    console.log(error);
+});
+```
+
+### 9. WeakMap
+
+A `WeakMap` is similar to a `Map` but allows garbage collection of keys.
+
+```javascript
+let weakMap = new WeakMap();
+let obj = {};
+
+weakMap.set(obj, "Some value");
+
+console.log(weakMap.get(obj)); // Outputs: Some value
+```
+
+### 10. WeakSet
+
+A `WeakSet` is similar to a `Set` but allows garbage collection of its items.
+
+```javascript
+let weakSet = new WeakSet();
+let obj1 = {};
+
+weakSet.add(obj1);
+
+console.log(weakSet.has(obj1)); // Outputs: true
+```
+
+### Summary
+
+- **Object**: Basic object type for storing key-value pairs.
+- **Array**: Ordered collection of items.
+- **Date**: Handles dates and times.
+- **Map**: Collection of key-value pairs where keys can be of any type.
+- **Set**: Collection of unique values.
+- **Typed Arrays**: Arrays for handling binary data.
+- **Promise**: Represents asynchronous operations.
+- **WeakMap**: Similar to `Map` but with keys that can be garbage-collected.
+- **WeakSet**: Similar to `Set` but with values that can be garbage-collected.
