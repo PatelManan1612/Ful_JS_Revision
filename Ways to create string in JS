@@ -1,0 +1,67 @@
+
+### 1. Single Quote String
+
+You can define a string using single quotes (`'`).
+
+#### Example:
+```javascript
+let singleQuoteString = 'Hello, World!';
+console.log(singleQuoteString); // Outputs: Hello, World!
+```
+
+### 2. Double Quote String
+
+You can also define a string using double quotes (`"`).
+
+#### Example:
+```javascript
+let doubleQuoteString = "Hello, World!";
+console.log(doubleQuoteString); // Outputs: Hello, World!
+```
+
+### 3. Template String (Template Literal)
+
+Template strings (or template literals) are defined using backticks (`` ` ``) and allow for string interpolation (inserting variables directly into the string) and multi-line strings.
+
+#### Example:
+```javascript
+let name = "Manan";
+let templateString = `Hello, ${name}! Welcome to the world of JavaScript.`;
+console.log(templateString); // Outputs: Hello, Manan! Welcome to the world of JavaScript.
+```
+
+Template literals also support multi-line strings without the need for concatenation or escape characters.
+
+```javascript
+let multiLineString = `This is a string
+that spans across
+multiple lines.`;
+console.log(multiLineString);
+// Outputs:
+// This is a string
+// that spans across
+// multiple lines.
+```
+
+### 4. String as Object
+
+Strings can also be created as objects using the `String` constructor. However, it's generally recommended to use primitive strings (single or double quotes) for simplicity and performance reasons.
+
+#### Example:
+```javascript
+let stringObject = new String("Hello, World!");
+console.log(stringObject); // Outputs: [String: 'Hello, World!']
+
+// Accessing the string value
+console.log(stringObject.valueOf()); // Outputs: Hello, World!
+```
+
+**Important Note**: When a string is created as an object, it behaves differently from a primitive string. For example:
+
+```javascript
+let primitiveString = "Hello, World!";
+let stringObject = new String("Hello, World!");
+
+console.log(typeof primitiveString); // Outputs: string
+console.log(typeof stringObject);    // Outputs: object
+```
