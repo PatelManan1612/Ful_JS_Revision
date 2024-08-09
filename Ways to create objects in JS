@@ -1,0 +1,98 @@
+
+### 1. Defining an Object Using an Object Literal
+
+An object literal is the simplest way to create an object. It involves defining the object directly with curly braces `{}`.
+
+#### Example
+```javascript
+let person = {
+    firstName: "Manan",
+    lastName: "Patel",
+    age: 22,
+    greet: function() {
+        console.log("Hello, my name is " + this.firstName + " " + this.lastName);
+    }
+};
+
+console.log(person.firstName); // Outputs: Manan
+person.greet(); // Outputs: Hello, my name is Manan Patel
+```
+
+**Explanation**:  
+- The `person` object is created using an object literal. 
+- It has properties `firstName`, `lastName`, and `age`, along with a method `greet()`.
+
+### 2. Defining an Object Using the `new` Keyword
+
+You can also create an object using the `new` keyword followed by `Object()`.
+
+#### Example
+```javascript
+let car = new Object();
+car.brand = "Toyota";
+car.model = "Corolla";
+car.year = 2021;
+
+console.log(car.brand); // Outputs: Toyota
+```
+
+**Explanation**:  
+- The `car` object is created using the `new Object()` syntax.
+- Properties like `brand`, `model`, and `year` are added to the object using dot notation.
+
+### 3. Defining an Object Using an Object Constructor
+
+An object constructor is a function that creates objects. This is useful when you need to create multiple objects with the same properties.
+
+#### Example
+```javascript
+function Person(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.greet = function() {
+        console.log("Hello, my name is " + this.firstName + " " + this.lastName);
+    };
+}
+
+let person1 = new Person("Manan", "Patel", 22);
+let person2 = new Person("John", "Doe", 30);
+
+console.log(person1.firstName); // Outputs: Manan
+person2.greet(); // Outputs: Hello, my name is John Doe
+```
+
+**Explanation**:  
+- The `Person` function is an object constructor that creates new objects.
+- When `new Person()` is called, it creates a new object with the properties and methods defined in the constructor.
+
+### Summary
+
+1. **Object Literal**:  
+   - Simplest and most common method.
+   - Directly creates an object using `{}`.
+   - Example:
+     ```javascript
+     let obj = { property: value };
+     ```
+
+2. **`new` Keyword**:  
+   - Creates an object using the `Object()` constructor.
+   - Allows you to dynamically add properties after creation.
+   - Example:
+     ```javascript
+     let obj = new Object();
+     obj.property = value;
+     ```
+
+3. **Object Constructor**:  
+   - Custom constructor functions to create multiple objects with the same structure.
+   - Useful for creating instances of objects with shared properties and methods.
+   - Example:
+     ```javascript
+     function ConstructorName(param1, param2) {
+         this.property1 = param1;
+         this.property2 = param2;
+     }
+     let obj = new ConstructorName(arg1, arg2);
+     ```
