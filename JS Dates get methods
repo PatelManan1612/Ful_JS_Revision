@@ -1,0 +1,81 @@
+
+### 1. **`getFullYear()`**
+Gets the year as a four-digit number (e.g., 2024).
+
+```javascript
+let now = new Date();
+console.log(now.getFullYear()); 
+// Example Output: 2024
+```
+
+### 2. **`getMonth()`**
+Gets the month as a number (0-11), where 0 is January and 11 is December.
+
+```javascript
+let now = new Date();
+console.log(now.getMonth()); 
+// Example Output: 7 (August)
+```
+
+### 3. **`getDate()`**
+Gets the day of the month as a number (1-31).
+
+```javascript
+let now = new Date();
+console.log(now.getDate()); 
+// Example Output: 14
+```
+
+### 4. **`getDay()`**
+Gets the day of the week as a number (0-6), where 0 is Sunday and 6 is Saturday.
+
+```javascript
+let now = new Date();
+console.log(now.getDay()); 
+// Example Output: 3 (Wednesday)
+```
+
+### 5. **`getHours()`**
+Gets the hour as a number (0-23).
+
+```javascript
+let now = new Date();
+console.log(now.getHours()); 
+// Example Output: 14 (2 PM in 24-hour format)
+```
+
+### 6. **`getMinutes()`**
+Gets the minute as a number (0-59).
+
+```javascript
+let now = new Date();
+console.log(now.getMinutes()); 
+// Example Output: 45
+```
+
+### 7. **`getSeconds()`**
+Gets the second as a number (0-59).
+
+```javascript
+let now = new Date();
+console.log(now.getSeconds()); 
+// Example Output: 30
+```
+
+### 8. **`getMilliseconds()`**
+Gets the millisecond as a number (0-999).
+
+```javascript
+let now = new Date();
+console.log(now.getMilliseconds()); 
+// Example Output: 500
+```
+
+### 9. **`getTime()`**
+Gets the number of milliseconds since January 1, 1970 (Unix Epoch).
+
+```javascript
+let now = new Date();
+console.log(now.getTime()); 
+// Example Output: 1728715800000 (milliseconds since Unix Epoch)
+```
