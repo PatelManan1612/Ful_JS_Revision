@@ -1,0 +1,153 @@
+
+### 1. **Array `forEach()`**
+The `forEach()` method executes a provided function once for each array element.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+numbers.forEach(function(number) {
+  console.log(number * 2);
+});
+// Outputs:
+// 2
+// 4
+// 6
+// 8
+// 10
+```
+
+### 2. **Array `map()`**
+The `map()` method creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let doubled = numbers.map(function(number) {
+  return number * 2;
+});
+console.log(doubled); // Outputs: [2, 4, 6, 8, 10]
+```
+
+### 3. **Array `flatMap()`**
+The `flatMap()` method first maps each element using a mapping function, then flattens the result into a new array.
+
+```javascript
+let numbers = [1, 2, 3];
+let result = numbers.flatMap(function(number) {
+  return [number, number * 2];
+});
+console.log(result); // Outputs: [1, 2, 2, 4, 3, 6]
+```
+
+### 4. **Array `filter()`**
+The `filter()` method creates a new array with all elements that pass the test implemented by the provided function.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = numbers.filter(function(number) {
+  return number % 2 === 0;
+});
+console.log(evenNumbers); // Outputs: [2, 4]
+```
+
+### 5. **Array `reduce()`**
+The `reduce()` method executes a reducer function on each element of the array, resulting in a single output value.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let sum = numbers.reduce(function(total, number) {
+  return total + number;
+}, 0);
+console.log(sum); // Outputs: 15
+```
+
+### 6. **Array `reduceRight()`**
+The `reduceRight()` method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let sum = numbers.reduceRight(function(total, number) {
+  return total + number;
+}, 0);
+console.log(sum); // Outputs: 15
+```
+
+### 7. **Array `every()`**
+The `every()` method tests whether all elements in the array pass the test implemented by the provided function.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let allEven = numbers.every(function(number) {
+  return number % 2 === 0;
+});
+console.log(allEven); // Outputs: false
+```
+
+### 8. **Array `some()`**
+The `some()` method tests whether at least one element in the array passes the test implemented by the provided function.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let someEven = numbers.some(function(number) {
+  return number % 2 === 0;
+});
+console.log(someEven); // Outputs: true
+```
+
+### 9. **Array `from()`**
+The `from()` method creates a new, shallow-copied Array instance from an array-like or iterable object.
+
+```javascript
+let str = "Hello";
+let letters = Array.from(str);
+console.log(letters); // Outputs: ['H', 'e', 'l', 'l', 'o']
+```
+
+### 10. **Array `keys()`**
+The `keys()` method returns a new Array Iterator object that contains the keys for each index in the array.
+
+```javascript
+let fruits = ["Banana", "Orange", "Apple"];
+let keys = fruits.keys();
+
+for (let key of keys) {
+  console.log(key);
+}
+// Outputs:
+// 0
+// 1
+// 2
+```
+
+### 11. **Array `entries()`**
+The `entries()` method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+
+```javascript
+let fruits = ["Banana", "Orange", "Apple"];
+let entries = fruits.entries();
+
+for (let entry of entries) {
+  console.log(entry);
+}
+// Outputs:
+// [0, "Banana"]
+// [1, "Orange"]
+// [2, "Apple"]
+```
+
+### 12. **Array `with()`**
+The `with()` method creates a new array with the given value at the specified index without modifying the original array.
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let newNumbers = numbers.with(2, 10);
+console.log(newNumbers); // Outputs: [1, 2, 10, 4, 5]
+console.log(numbers);    // Outputs: [1, 2, 3, 4, 5] (original array unchanged)
+```
+
+### 13. **Array Spread (`...`)**
+The spread operator (`...`) allows an iterable (such as an array) to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected.
+
+```javascript
+let numbers = [1, 2, 3];
+let newNumbers = [...numbers, 4, 5];
+console.log(newNumbers); // Outputs: [1, 2, 3, 4, 5]
+```
