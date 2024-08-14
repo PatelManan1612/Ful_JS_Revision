@@ -1,0 +1,80 @@
+
+### 1. **`setDate()`**
+Sets the day of the month (1-31).
+
+```javascript
+let date = new Date();
+date.setDate(20);
+console.log(date); 
+// Example Output: The date with the day set to 20
+```
+
+### 2. **`setFullYear()`**
+Sets the year. Optionally, you can set the month and day as well.
+
+```javascript
+let date = new Date();
+date.setFullYear(2025, 0, 15);  // Sets the year to 2025, January 15th
+console.log(date); 
+// Example Output: The date with the year set to 2025, month to January (0), and day to 15
+```
+
+### 3. **`setHours()`**
+Sets the hour of the day (0-23).
+
+```javascript
+let date = new Date();
+date.setHours(10);  // Sets the hour to 10 AM
+console.log(date); 
+// Example Output: The date with the hour set to 10
+```
+
+### 4. **`setMilliseconds()`**
+Sets the milliseconds (0-999).
+
+```javascript
+let date = new Date();
+date.setMilliseconds(500);  // Sets milliseconds to 500
+console.log(date); 
+// Example Output: The date with the milliseconds set to 500
+```
+
+### 5. **`setMinutes()`**
+Sets the minutes (0-59).
+
+```javascript
+let date = new Date();
+date.setMinutes(30);  // Sets the minutes to 30
+console.log(date); 
+// Example Output: The date with the minutes set to 30
+```
+
+### 6. **`setMonth()`**
+Sets the month (0-11).
+
+```javascript
+let date = new Date();
+date.setMonth(6);  // Sets the month to July (0 = January, so 6 = July)
+console.log(date); 
+// Example Output: The date with the month set to July
+```
+
+### 7. **`setSeconds()`**
+Sets the seconds (0-59).
+
+```javascript
+let date = new Date();
+date.setSeconds(45);  // Sets the seconds to 45
+console.log(date); 
+// Example Output: The date with the seconds set to 45
+```
+
+### 8. **`setTime()`**
+Sets the time by specifying the number of milliseconds since January 1, 1970 (Unix Epoch).
+
+```javascript
+let date = new Date();
+date.setTime(1728715800000);  // Sets the date to the time specified in milliseconds
+console.log(date); 
+// Example Output: The date corresponding to the time set in milliseconds since Unix Epoch
+```
