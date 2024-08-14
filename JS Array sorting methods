@@ -1,0 +1,147 @@
+
+### 1. **Array `sort()`**
+The `sort()` method sorts the elements of an array in place and returns the sorted array. By default, it sorts elements as strings in ascending order.
+
+```javascript
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+console.log(fruits); // Outputs: ["Apple", "Banana", "Mango", "Orange"]
+```
+
+### 2. **Array `reverse()`**
+The `reverse()` method reverses the order of the elements in an array in place and returns the reversed array.
+
+```javascript
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.reverse();
+console.log(fruits); // Outputs: ["Mango", "Apple", "Orange", "Banana"]
+```
+
+### 3. **Array `toSorted()`**
+The `toSorted()` method creates a new array with the elements sorted without modifying the original array (ES2023).
+
+```javascript
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+let sortedFruits = fruits.toSorted();
+console.log(sortedFruits); // Outputs: ["Apple", "Banana", "Mango", "Orange"]
+console.log(fruits);       // Outputs: ["Banana", "Orange", "Apple", "Mango"] (original array is unchanged)
+```
+
+### 4. **Array `toReversed()`**
+The `toReversed()` method creates a new array with the elements reversed without modifying the original array (ES2023).
+
+```javascript
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+let reversedFruits = fruits.toReversed();
+console.log(reversedFruits); // Outputs: ["Mango", "Apple", "Orange", "Banana"]
+console.log(fruits);         // Outputs: ["Banana", "Orange", "Apple", "Mango"] (original array is unchanged)
+```
+
+### 5. **Sorting Objects**
+To sort an array of objects based on a specific property, use the `sort()` method with a comparison function.
+
+```javascript
+let cars = [
+  { make: "Toyota", year: 2019 },
+  { make: "Honda", year: 2020 },
+  { make: "Ford", year: 2018 }
+];
+
+cars.sort(function(a, b) {
+  return a.year - b.year; // Sort by year (ascending)
+});
+console.log(cars); 
+// Outputs: 
+// [
+//   { make: "Ford", year: 2018 },
+//   { make: "Toyota", year: 2019 },
+//   { make: "Honda", year: 2020 }
+// ]
+```
+
+### 6. **Numeric Sort**
+When sorting numbers, the default `sort()` treats them as strings, so a comparison function is needed.
+
+```javascript
+let numbers = [40, 100, 1, 5, 25, 10];
+numbers.sort(function(a, b) {
+  return a - b; // Sort numbers in ascending order
+});
+console.log(numbers); // Outputs: [1, 5, 10, 25, 40, 100]
+```
+
+### 7. **Descending Numeric Sort**
+You can sort numbers in descending order by reversing the comparison in the sort function.
+
+```javascript
+let numbers = [40, 100, 1, 5, 25, 10];
+numbers.sort(function(a, b) {
+  return b - a; // Sort numbers in descending order
+});
+console.log(numbers); // Outputs: [100, 40, 25, 10, 5, 1]
+```
+
+### 8. **Random Sort**
+To shuffle an array (randomly sort), you can use the following approach.
+
+```javascript
+let numbers = [40, 100, 1, 5, 25, 10];
+numbers.sort(function() {
+  return 0.5 - Math.random();
+});
+console.log(numbers); // Outputs: A randomly shuffled array
+```
+
+### 9. **Math.min()**
+The `Math.min()` function returns the smallest of the given numbers.
+
+```javascript
+let numbers = [40, 100, 1, 5, 25, 10];
+let minNumber = Math.min(...numbers);
+console.log(minNumber); // Outputs: 1
+```
+
+### 10. **Math.max()**
+The `Math.max()` function returns the largest of the given numbers.
+
+```javascript
+let numbers = [40, 100, 1, 5, 25, 10];
+let maxNumber = Math.max(...numbers);
+console.log(maxNumber); // Outputs: 100
+```
+
+### 11. **Homemade Min Function**
+You can create your own function to find the minimum value in an array.
+
+```javascript
+function findMin(arr) {
+  let min = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return min;
+}
+
+let numbers = [40, 100, 1, 5, 25, 10];
+console.log(findMin(numbers)); // Outputs: 1
+```
+
+### 12. **Homemade Max Function**
+Similarly, you can create your own function to find the maximum value in an array.
+
+```javascript
+function findMax(arr) {
+  let max = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+let numbers = [40, 100, 1, 5, 25, 10];
+console.log(findMax(numbers)); // Outputs: 100
+```
