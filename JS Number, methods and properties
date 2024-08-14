@@ -1,4 +1,3 @@
-In JavaScript, numbers are a fundamental data type and come with various methods and properties that allow for manipulation and interaction with numeric values. Let's explore these:
 
 ### 1. **JavaScript Numbers**
 
@@ -159,11 +158,3 @@ Represents the minimum safe integer in JavaScript (`-(2^53 - 1)`).
 ```javascript
 console.log(Number.MIN_SAFE_INTEGER); // Outputs: -9007199254740991
 ```
-
-### Summary
-
-- **Numbers in JavaScript** can be integers, floats, `Infinity`, or `NaN`.
-- **Number Methods**: Include methods like `toString()`, `toFixed()`, `toExponential()`, `toPrecision()`, `valueOf()`, `Number()`, `parseInt()`, `parseFloat()`, `isNaN()`, and `isFinite()` for working with numbers.
-- **Number Properties**: Include `Number.MAX_VALUE`, `Number.MIN_VALUE`, `Number.POSITIVE_INFINITY`, `Number.NEGATIVE_INFINITY`, `Number.NaN`, `Number.EPSILON`, `Number.MAX_SAFE_INTEGER`, and `Number.MIN_SAFE_INTEGER`.
-
-These methods and properties provide powerful tools for handling numeric operations and manipulations in JavaScript.
