@@ -1,0 +1,71 @@
+
+### 1. **Array `indexOf()`**
+The `indexOf()` method returns the first index at which a given element can be found in the array, or `-1` if it is not present.
+
+```javascript
+let fruits = ["Apple", "Banana", "Orange", "Banana"];
+let index = fruits.indexOf("Banana");
+console.log(index); // Outputs: 1 (first occurrence of "Banana")
+```
+
+### 2. **Array `lastIndexOf()`**
+The `lastIndexOf()` method returns the last index at which a given element can be found in the array, or `-1` if it is not present.
+
+```javascript
+let fruits = ["Apple", "Banana", "Orange", "Banana"];
+let lastIndex = fruits.lastIndexOf("Banana");
+console.log(lastIndex); // Outputs: 3 (last occurrence of "Banana")
+```
+
+### 3. **Array `includes()`**
+The `includes()` method determines whether an array contains a certain element, returning `true` or `false` as appropriate.
+
+```javascript
+let fruits = ["Apple", "Banana", "Orange"];
+let hasBanana = fruits.includes("Banana");
+console.log(hasBanana); // Outputs: true
+```
+
+### 4. **Array `find()`**
+The `find()` method returns the value of the first element in the array that satisfies the provided testing function. Otherwise, it returns `undefined`.
+
+```javascript
+let numbers = [4, 9, 16, 25];
+let firstLargeNumber = numbers.find(function(num) {
+  return num > 10;
+});
+console.log(firstLargeNumber); // Outputs: 16
+```
+
+### 5. **Array `findIndex()`**
+The `findIndex()` method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns `-1`.
+
+```javascript
+let numbers = [4, 9, 16, 25];
+let firstLargeNumberIndex = numbers.findIndex(function(num) {
+  return num > 10;
+});
+console.log(firstLargeNumberIndex); // Outputs: 2
+```
+
+### 6. **Array `findLast()`**
+The `findLast()` method returns the value of the last element in the array that satisfies the provided testing function. Otherwise, it returns `undefined`.
+
+```javascript
+let numbers = [4, 9, 16, 25];
+let lastLargeNumber = numbers.findLast(function(num) {
+  return num > 10;
+});
+console.log(lastLargeNumber); // Outputs: 25
+```
+
+### 7. **Array `findLastIndex()`**
+The `findLastIndex()` method returns the index of the last element in the array that satisfies the provided testing function. Otherwise, it returns `-1`.
+
+```javascript
+let numbers = [4, 9, 16, 25];
+let lastLargeNumberIndex = numbers.findLastIndex(function(num) {
+  return num > 10;
+});
+console.log(lastLargeNumberIndex); // Outputs: 3
+```
