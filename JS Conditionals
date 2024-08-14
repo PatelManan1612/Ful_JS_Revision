@@ -1,0 +1,118 @@
+
+### 1. **`if` Statement**
+
+The `if` statement is used to execute a block of code only if a specified condition is true.
+
+```javascript
+let x = 10;
+
+if (x > 5) {
+    console.log("x is greater than 5");
+}
+// Output: x is greater than 5
+```
+
+### 2. **`else` Statement**
+
+The `else` statement is used in conjunction with `if` to execute a block of code if the condition in the `if` statement is false.
+
+```javascript
+let x = 3;
+
+if (x > 5) {
+    console.log("x is greater than 5");
+} else {
+    console.log("x is not greater than 5");
+}
+// Output: x is not greater than 5
+```
+
+### 3. **`else if` Statement**
+
+The `else if` statement is used to specify a new condition to test if the previous `if` condition was false.
+
+```javascript
+let x = 5;
+
+if (x > 5) {
+    console.log("x is greater than 5");
+} else if (x === 5) {
+    console.log("x is equal to 5");
+} else {
+    console.log("x is less than 5");
+}
+// Output: x is equal to 5
+```
+
+### 4. **`switch` Statement**
+
+The `switch` statement is used to perform different actions based on different conditions, particularly when testing a single expression against multiple values.
+
+```javascript
+let day = 3;
+let dayName;
+
+switch (day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    default:
+        dayName = "Invalid day";
+}
+
+console.log(dayName);
+// Output: Wednesday
+```
+
+### 5. **Ternary Operator (`? :`)**
+
+The ternary operator is a shorthand for the `if-else` statement and is used to assign a value based on a condition.
+
+```javascript
+let age = 18;
+let canVote = (age >= 18) ? "Yes, can vote" : "No, cannot vote";
+
+console.log(canVote);
+// Output: Yes, can vote
+```
+
+### 6. **`??` (Nullish Coalescing Operator)**
+
+This operator returns the right-hand operand when the left-hand operand is `null` or `undefined`, and otherwise returns the left-hand operand.
+
+```javascript
+let name = null;
+let defaultName = name ?? "Guest";
+
+console.log(defaultName);
+// Output: Guest
+```
+
+### 7. **Logical Operators (`&&`, `||`)**
+
+Logical operators can also be used in conditional expressions to combine multiple conditions.
+
+- **Logical AND (`&&`)**: Executes if both conditions are true.
+- **Logical OR (`||`)**: Executes if at least one condition is true.
+
+```javascript
+let x = 5;
+let y = 10;
+
+if (x > 0 && y > 0) {
+    console.log("Both x and y are positive");
+}
+
+if (x > 0 || y < 0) {
+    console.log("Either x is positive or y is negative");
+}
+// Output:
+// Both x and y are positive
+// Either x is positive or y is negative
+```
