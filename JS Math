@@ -1,0 +1,195 @@
+All properties and methods of `Math` are static and can be accessed directly.
+
+### 1. **Math Properties**
+
+The `Math` object has several properties that represent mathematical constants.
+
+- **`Math.PI`**
+  - Represents the ratio of the circumference of a circle to its diameter (π).
+  ```javascript
+  console.log(Math.PI); 
+  // Output: 3.141592653589793
+  ```
+
+- **`Math.E`**
+  - Represents Euler's number (e), the base of natural logarithms.
+  ```javascript
+  console.log(Math.E); 
+  // Output: 2.718281828459045
+  ```
+
+- **`Math.SQRT2`**
+  - Represents the square root of 2.
+  ```javascript
+  console.log(Math.SQRT2); 
+  // Output: 1.4142135623730951
+  ```
+
+- **`Math.SQRT1_2`**
+  - Represents the square root of 1/2.
+  ```javascript
+  console.log(Math.SQRT1_2); 
+  // Output: 0.7071067811865476
+  ```
+
+- **`Math.LN2`**
+  - Represents the natural logarithm of 2.
+  ```javascript
+  console.log(Math.LN2); 
+  // Output: 0.6931471805599453
+  ```
+
+- **`Math.LN10`**
+  - Represents the natural logarithm of 10.
+  ```javascript
+  console.log(Math.LN10); 
+  // Output: 2.302585092994046
+  ```
+
+- **`Math.LOG2E`**
+  - Represents the base-2 logarithm of e.
+  ```javascript
+  console.log(Math.LOG2E); 
+  // Output: 1.4426950408889634
+  ```
+
+- **`Math.LOG10E`**
+  - Represents the base-10 logarithm of e.
+  ```javascript
+  console.log(Math.LOG10E); 
+  // Output: 0.4342944819032518
+  ```
+
+### 2. **Math Methods**
+
+The `Math` object provides numerous methods to perform mathematical operations.
+
+#### 2.1 **Rounding Methods**
+
+- **`Math.round()`**
+  - Rounds a number to the nearest integer.
+  ```javascript
+  console.log(Math.round(4.7)); 
+  // Output: 5
+
+  console.log(Math.round(4.4)); 
+  // Output: 4
+  ```
+
+- **`Math.ceil()`**
+  - Rounds a number up to the next largest integer.
+  ```javascript
+  console.log(Math.ceil(4.1)); 
+  // Output: 5
+  ```
+
+- **`Math.floor()`**
+  - Rounds a number down to the next smallest integer.
+  ```javascript
+  console.log(Math.floor(4.9)); 
+  // Output: 4
+  ```
+
+- **`Math.trunc()`**
+  - Returns the integer part of a number, removing any fractional digits.
+  ```javascript
+  console.log(Math.trunc(4.9)); 
+  // Output: 4
+  ```
+
+#### 2.2 **Arithmetic Methods**
+
+- **`Math.abs()`**
+  - Returns the absolute value of a number.
+  ```javascript
+  console.log(Math.abs(-7.25)); 
+  // Output: 7.25
+  ```
+
+- **`Math.pow()`**
+  - Returns the base to the exponent power.
+  ```javascript
+  console.log(Math.pow(2, 3)); 
+  // Output: 8
+  ```
+
+- **`Math.sqrt()`**
+  - Returns the square root of a number.
+  ```javascript
+  console.log(Math.sqrt(16)); 
+  // Output: 4
+  ```
+
+- **`Math.cbrt()`**
+  - Returns the cube root of a number.
+  ```javascript
+  console.log(Math.cbrt(27)); 
+  // Output: 3
+  ```
+
+- **`Math.max()`**
+  - Returns the largest of zero or more numbers.
+  ```javascript
+  console.log(Math.max(5, 10, 15)); 
+  // Output: 15
+  ```
+
+- **`Math.min()`**
+  - Returns the smallest of zero or more numbers.
+  ```javascript
+  console.log(Math.min(5, 10, 15)); 
+  // Output: 5
+  ```
+
+- **`Math.random()`**
+  - Returns a pseudo-random number between 0 (inclusive) and 1 (exclusive).
+  ```javascript
+  console.log(Math.random()); 
+  // Example Output: 0.453271413805743
+  ```
+
+#### 2.3 **Trigonometric Methods**
+
+- **`Math.sin()`**
+  - Returns the sine of an angle (in radians).
+  ```javascript
+  console.log(Math.sin(Math.PI / 2)); 
+  // Output: 1
+  ```
+
+- **`Math.cos()`**
+  - Returns the cosine of an angle (in radians).
+  ```javascript
+  console.log(Math.cos(Math.PI)); 
+  // Output: -1
+  ```
+
+- **`Math.tan()`**
+  - Returns the tangent of an angle (in radians).
+  ```javascript
+  console.log(Math.tan(Math.PI / 4)); 
+  // Output: 1
+  ```
+
+#### 2.4 **Logarithmic Methods**
+
+- **`Math.log()`**
+  - Returns the natural logarithm (base e) of a number.
+  ```javascript
+  console.log(Math.log(10)); 
+  // Output: 2.302585092994046
+  ```
+
+- **`Math.log2()`**
+  - Returns the base-2 logarithm of a number.
+  ```javascript
+  console.log(Math.log2(8)); 
+  // Output: 3
+  ```
+
+- **`Math.log10()`**
+  - Returns the base-10 logarithm of a number.
+  ```javascript
+  console.log(Math.log10(100)); 
+  // Output: 2
+  ```
