@@ -1,0 +1,138 @@
+
+### 1. **`for` Loop**
+
+The `for` loop is used when you know in advance how many times you want to execute a statement or a block of statements.
+
+```javascript
+for (let i = 0; i < 5; i++) {
+    console.log("Iteration number: " + i);
+}
+// Output: 
+// Iteration number: 0
+// Iteration number: 1
+// Iteration number: 2
+// Iteration number: 3
+// Iteration number: 4
+```
+
+### 2. **`while` Loop**
+
+The `while` loop repeats a block of code as long as a specified condition is true.
+
+```javascript
+let i = 0;
+while (i < 5) {
+    console.log("Iteration number: " + i);
+    i++;
+}
+// Output: 
+// Iteration number: 0
+// Iteration number: 1
+// Iteration number: 2
+// Iteration number: 3
+// Iteration number: 4
+```
+
+### 3. **`do...while` Loop**
+
+The `do...while` loop is similar to the `while` loop, except that the code block is executed at least once before the condition is tested.
+
+```javascript
+let i = 0;
+do {
+    console.log("Iteration number: " + i);
+    i++;
+} while (i < 5);
+// Output: 
+// Iteration number: 0
+// Iteration number: 1
+// Iteration number: 2
+// Iteration number: 3
+// Iteration number: 4
+```
+
+### 4. **`for...in` Loop**
+
+The `for...in` loop is used to iterate over the properties of an object (including inherited properties).
+
+```javascript
+let person = { name: "John", age: 30, city: "New York" };
+
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+// Output:
+// name: John
+// age: 30
+// city: New York
+```
+
+### 5. **`for...of` Loop**
+
+The `for...of` loop is used to iterate over the values of iterable objects like arrays, strings, maps, sets, etc.
+
+```javascript
+let array = [10, 20, 30, 40];
+
+for (let value of array) {
+    console.log(value);
+}
+// Output:
+// 10
+// 20
+// 30
+// 40
+```
+
+### 6. **`break` Statement**
+
+The `break` statement is used to exit a loop prematurely.
+
+```javascript
+for (let i = 0; i < 5; i++) {
+    if (i === 3) {
+        break;
+    }
+    console.log("Iteration number: " + i);
+}
+// Output:
+// Iteration number: 0
+// Iteration number: 1
+// Iteration number: 2
+```
+
+### 7. **`continue` Statement**
+
+The `continue` statement is used to skip the current iteration of a loop and continue with the next iteration.
+
+```javascript
+for (let i = 0; i < 5; i++) {
+    if (i === 3) {
+        continue;
+    }
+    console.log("Iteration number: " + i);
+}
+// Output:
+// Iteration number: 0
+// Iteration number: 1
+// Iteration number: 2
+// Iteration number: 4
+```
+
+### 8. **`forEach` Method**
+
+The `forEach` method is an array method that executes a provided function once for each array element.
+
+```javascript
+let array = [1, 2, 3, 4, 5];
+
+array.forEach(function(item, index) {
+    console.log("Item at index " + index + ": " + item);
+});
+// Output:
+// Item at index 0: 1
+// Item at index 1: 2
+// Item at index 2: 3
+// Item at index 3: 4
+// Item at index 4: 5
+```
