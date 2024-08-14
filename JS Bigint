@@ -1,0 +1,73 @@
+In JavaScript, `BigInt` is a special numeric type that allows you to represent integers with arbitrary precision. It was introduced in ECMAScript 2020 to handle numbers larger than what can be represented by the `Number` type, which has a maximum safe integer value of `2^53 - 1` (9,007,199,254,740,991).
+
+### 1. **Creating a `BigInt`**
+
+You can create a `BigInt` in two ways:
+
+- By appending `n` to the end of an integer literal.
+- By using the `BigInt()` constructor.
+
+#### Example:
+```javascript
+// Using the 'n' suffix
+let bigIntLiteral = 1234567890123456789012345678901234567890n;
+
+// Using the BigInt constructor
+let bigIntConstructor = BigInt("1234567890123456789012345678901234567890");
+
+console.log(bigIntLiteral);     // Outputs: 1234567890123456789012345678901234567890n
+console.log(bigIntConstructor); // Outputs: 1234567890123456789012345678901234567890n
+```
+
+### 2. **Operations with `BigInt`**
+
+`BigInt` supports standard arithmetic operations, but you cannot mix `BigInt` with `Number` types directly. You must convert them to the same type before performing operations.
+
+#### Example:
+
+```javascript
+let a = 1000000000000000000000000000000n;
+let b = 2000000000000000000000000000000n;
+
+let sum = a + b;
+console.log(sum); // Outputs: 3000000000000000000000000000000n
+
+// Mixing BigInt with Number (will cause an error)
+let num = 5;
+let bigInt = 10n;
+// let result = num + bigInt; // TypeError: Cannot mix BigInt and other types
+
+// Correct way to mix
+let result = BigInt(num) + bigInt;
+console.log(result); // Outputs: 15n
+```
+
+### 3. **Comparison with `BigInt`**
+
+`BigInt` can be compared using standard comparison operators like `>`, `<`, `>=`, `<=`, `==`, and `===`.
+
+#### Example:
+```javascript
+let bigInt1 = 100n;
+let bigInt2 = 200n;
+
+console.log(bigInt1 < bigInt2); // Outputs: true
+console.log(bigInt1 == 100n);   // Outputs: true
+console.log(bigInt1 === 100n);  // Outputs: true
+
+// Comparison with Number
+console.log(bigInt1 == 100);    // Outputs: true (because == does type coercion)
+console.log(bigInt1 === 100);   // Outputs: false (because === does not do type coercion)
+```
+
+### 4. **`BigInt` Limitations**
+
+- **No floating-point support**: `BigInt` can only represent integers, not floating-point numbers.
+- **Cannot mix with `Number` without explicit conversion**: Arithmetic operations between `BigInt` and `Number` are not allowed unless you explicitly convert one type to the other.
+- **Precision trade-off**: While `BigInt` allows for arbitrarily large integers, it does not offer the floating-point precision that `Number` provides.
+
+### 5. **Example Use Cases**
+
+- **Cryptography**: `BigInt` is useful for cryptographic algorithms where large integers are common.
+- **High-precision calculations**: Situations where precision beyond what `Number` can provide is needed, like certain scientific calculations.
+- **Handling large integers**: For applications that need to handle large integers, such as working with large datasets, financial calculations with high precision, etc.
