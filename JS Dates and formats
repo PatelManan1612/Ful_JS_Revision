@@ -1,0 +1,102 @@
+### JavaScript Dates
+
+JavaScript provides a `Date` object to work with dates and times. This object can be used to get the current date and time, as well as to create, manipulate, and format dates.
+
+### 1. **Creating a Date Object**
+You can create a `Date` object in the following ways:
+
+```javascript
+// Current date and time
+let now = new Date();
+
+// Specifying a date string
+let dateString = new Date("2024-08-14");
+
+// Specifying year, month, day, hour, minute, second, millisecond
+let specificDate = new Date(2024, 7, 14, 12, 30, 0, 0);
+```
+
+### 2. **Date Formats**
+JavaScript recognizes several date formats:
+
+- **ISO Date (International Standard):**
+  - `YYYY-MM-DD` or `YYYY-MM-DDTHH:MM:SSZ`
+  ```javascript
+  let isoDate = new Date("2024-08-14T12:30:00Z");
+  ```
+
+- **Short Date (Common in US):**
+  - `MM/DD/YYYY`
+  ```javascript
+  let shortDate = new Date("08/14/2024");
+  ```
+
+- **Long Date:**
+  - `Month DD, YYYY` or `Day, Month DD, YYYY`
+  ```javascript
+  let longDate = new Date("August 14, 2024");
+  ```
+
+### 3. **Date Methods**
+
+JavaScript provides various methods to format dates.
+
+#### 3.1 **`toString()`**
+Converts the `Date` object to a string, representing the date and time.
+
+```javascript
+let now = new Date();
+console.log(now.toString());
+// Example Output: "Wed Aug 14 2024 14:45:00 GMT+0000 (Coordinated Universal Time)"
+```
+
+#### 3.2 **`toDateString()`**
+Returns the date portion of a `Date` object as a string.
+
+```javascript
+let now = new Date();
+console.log(now.toDateString());
+// Example Output: "Wed Aug 14 2024"
+```
+
+#### 3.3 **`toUTCString()`**
+Converts the date to a string, using the UTC (Universal Coordinated Time) time zone.
+
+```javascript
+let now = new Date();
+console.log(now.toUTCString());
+// Example Output: "Wed, 14 Aug 2024 14:45:00 GMT"
+```
+
+#### 3.4 **`toISOString()`**
+Converts the date to a string, using the ISO standard format.
+
+```javascript
+let now = new Date();
+console.log(now.toISOString());
+// Example Output: "2024-08-14T14:45:00.000Z"
+```
+
+### 4. **Date Types**
+There are different ways to represent dates in JavaScript:
+
+#### 4.1 **ISO Dates**
+The ISO 8601 format is the international standard for representing dates and times. The format is `YYYY-MM-DDTHH:MM:SSZ`.
+
+```javascript
+let isoDate = new Date("2024-08-14T12:30:00Z");
+```
+
+#### 4.2 **Short Date**
+Short dates are typically written in `MM/DD/YYYY` format in the US.
+
+```javascript
+let shortDate = new Date("08/14/2024");
+```
+
+#### 4.3 **Long Date**
+Long dates are written out with the full month name and can include the day of the week.
+
+```javascript
+let longDate = new Date("August 14, 2024");
+```
