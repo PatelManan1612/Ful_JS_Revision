@@ -1,0 +1,216 @@
+
+### 1. **`Math.abs(x)`**
+Returns the absolute value of `x`.
+
+```javascript
+console.log(Math.abs(-7)); 
+// Output: 7
+```
+
+### 2. **`Math.acos(x)`**
+Returns the arccosine (inverse cosine) of `x` in radians.
+
+```javascript
+console.log(Math.acos(1)); 
+// Output: 0
+```
+
+### 3. **`Math.acosh(x)`**
+Returns the hyperbolic arccosine of `x`.
+
+```javascript
+console.log(Math.acosh(2)); 
+// Output: 1.3169578969248166
+```
+
+### 4. **`Math.asin(x)`**
+Returns the arcsine (inverse sine) of `x` in radians.
+
+```javascript
+console.log(Math.asin(0.5)); 
+// Output: 0.5235987755982989
+```
+
+### 5. **`Math.asinh(x)`**
+Returns the hyperbolic arcsine of `x`.
+
+```javascript
+console.log(Math.asinh(1)); 
+// Output: 0.881373587019543
+```
+
+### 6. **`Math.atan(x)`**
+Returns the arctangent (inverse tangent) of `x`, in radians, as a value between `-PI/2` and `PI/2`.
+
+```javascript
+console.log(Math.atan(1)); 
+// Output: 0.7853981633974483
+```
+
+### 7. **`Math.atan2(y, x)`**
+Returns the arctangent of the quotient of its arguments.
+
+```javascript
+console.log(Math.atan2(1, 1)); 
+// Output: 0.7853981633974483
+```
+
+### 8. **`Math.atanh(x)`**
+Returns the hyperbolic arctangent of `x`.
+
+```javascript
+console.log(Math.atanh(0.5)); 
+// Output: 0.5493061443340548
+```
+
+### 9. **`Math.cbrt(x)`**
+Returns the cube root of `x`.
+
+```javascript
+console.log(Math.cbrt(27)); 
+// Output: 3
+```
+
+### 10. **`Math.ceil(x)`**
+Returns `x` rounded upwards to the nearest integer.
+
+```javascript
+console.log(Math.ceil(4.1)); 
+// Output: 5
+```
+
+### 11. **`Math.cos(x)`**
+Returns the cosine of `x` (x is in radians).
+
+```javascript
+console.log(Math.cos(Math.PI / 3)); 
+// Output: 0.5
+```
+
+### 12. **`Math.cosh(x)`**
+Returns the hyperbolic cosine of `x`.
+
+```javascript
+console.log(Math.cosh(1)); 
+// Output: 1.5430806348152437
+```
+
+### 13. **`Math.exp(x)`**
+Returns the value of `E` raised to the power of `x`.
+
+```javascript
+console.log(Math.exp(1)); 
+// Output: 2.718281828459045
+```
+
+### 14. **`Math.floor(x)`**
+Returns `x` rounded downwards to the nearest integer.
+
+```javascript
+console.log(Math.floor(4.9)); 
+// Output: 4
+```
+
+### 15. **`Math.log(x)`**
+Returns the natural logarithm (base E) of `x`.
+
+```javascript
+console.log(Math.log(10)); 
+// Output: 2.302585092994046
+```
+
+### 16. **`Math.max(x, y, z, ..., n)`**
+Returns the number with the highest value.
+
+```javascript
+console.log(Math.max(10, 20, 30)); 
+// Output: 30
+```
+
+### 17. **`Math.min(x, y, z, ..., n)`**
+Returns the number with the lowest value.
+
+```javascript
+console.log(Math.min(10, 20, 30)); 
+// Output: 10
+```
+
+### 18. **`Math.pow(x, y)`**
+Returns the value of `x` to the power of `y`.
+
+```javascript
+console.log(Math.pow(2, 3)); 
+// Output: 8
+```
+
+### 19. **`Math.random()`**
+Returns a random number between `0` (inclusive) and `1` (exclusive).
+
+```javascript
+console.log(Math.random()); 
+// Example Output: 0.453271413805743
+```
+
+### 20. **`Math.round(x)`**
+Rounds `x` to the nearest integer.
+
+```javascript
+console.log(Math.round(4.6)); 
+// Output: 5
+```
+
+### 21. **`Math.sign(x)`**
+Returns `-1` if `x` is negative, `0` if `x` is zero, and `1` if `x` is positive.
+
+```javascript
+console.log(Math.sign(-10)); 
+// Output: -1
+```
+
+### 22. **`Math.sin(x)`**
+Returns the sine of `x` (x is in radians).
+
+```javascript
+console.log(Math.sin(Math.PI / 2)); 
+// Output: 1
+```
+
+### 23. **`Math.sinh(x)`**
+Returns the hyperbolic sine of `x`.
+
+```javascript
+console.log(Math.sinh(1)); 
+// Output: 1.1752011936438014
+```
+
+### 24. **`Math.sqrt(x)`**
+Returns the square root of `x`.
+
+```javascript
+console.log(Math.sqrt(16)); 
+// Output: 4
+```
+
+### 25. **`Math.tan(x)`**
+Returns the tangent of an angle.
+
+```javascript
+console.log(Math.tan(Math.PI / 4)); 
+// Output: 1
+```
+
+### 26. **`Math.tanh(x)`**
+Returns the hyperbolic tangent of a number.
+
+```javascript
+console.log(Math.tanh(1)); 
+// Output: 0.7615941559557649
+```
+
+### 27. **`Math.trunc(x)`**
+Returns the integer part of a number `x`, removing any fractional digits.
+
+```javascript
+console.log(Math.trunc(4.9)); 
+// Output: 4
+```
