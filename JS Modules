@@ -1,0 +1,136 @@
+### **JavaScript Modules**
+
+JavaScript modules allow you to break up your code into separate files, making it easier to maintain and reuse. Modules can export functionality (variables, functions, classes, etc.) from one file and import them into another.
+
+### **Named Exports**
+
+Named exports allow you to export multiple variables, functions, or classes from a module. You can either export them inline as they are declared or export them all at once at the end of the file.
+
+#### **Inline Named Exports**
+
+You can export each variable, function, or class inline by prefixing them with the `export` keyword.
+
+```javascript
+// math.js
+
+export const PI = 3.14159;
+
+export function add(a, b) {
+    return a + b;
+}
+
+export class Circle {
+    constructor(radius) {
+        this.radius = radius;
+    }
+
+    getArea() {
+        return PI * this.radius * this.radius;
+    }
+}
+```
+
+#### **Named Exports All at Once**
+
+Alternatively, you can declare variables, functions, or classes first, and then export them all at once at the end of the file.
+
+```javascript
+// math.js
+
+const PI = 3.14159;
+
+function add(a, b) {
+    return a + b;
+}
+
+class Circle {
+    constructor(radius) {
+        this.radius = radius;
+    }
+
+    getArea() {
+        return PI * this.radius * this.radius;
+    }
+}
+
+export { PI, add, Circle };
+```
+
+#### **Importing from Named Exports**
+
+When you import from named exports, you need to use the exact names of the exported variables, functions, or classes, enclosed in curly braces.
+
+```javascript
+// main.js
+
+import { PI, add, Circle } from './math.js';
+
+console.log(PI); // 3.14159
+console.log(add(2, 3)); // 5
+
+const myCircle = new Circle(5);
+console.log(myCircle.getArea()); // 78.53975
+```
+
+You can also use the `as` keyword to rename the imports.
+
+```javascript
+import { PI as PiValue, add as sum } from './math.js';
+
+console.log(PiValue); // 3.14159
+console.log(sum(2, 3)); // 5
+```
+
+### **Default Exports**
+
+A module can have one default export, which can be a variable, function, or class. Default exports are useful when a module is expected to export only a single functionality.
+
+```javascript
+// greet.js
+
+export default function greet() {
+    console.log("Hello, World!");
+}
+```
+
+#### **Importing from Default Exports**
+
+When you import from a default export, you don't use curly braces, and you can name the imported entity whatever you want.
+
+```javascript
+// main.js
+
+import greet from './greet.js';
+
+greet(); // Hello, World!
+```
+
+### **Combining Named and Default Exports**
+
+You can combine both named and default exports in a single module.
+
+```javascript
+// utility.js
+
+export const version = '1.0.0';
+
+export function log(message) {
+    console.log(message);
+}
+
+export default function greet() {
+    console.log("Welcome to the utility module!");
+}
+```
+
+In this case, you can import the default and named exports together.
+
+```javascript
+// main.js
+
+import greet, { version, log } from './utility.js';
+
+greet(); // Welcome to the utility module!
+console.log(version); // 1.0.0
+log("This is a log message."); // This is a log message.
+```
