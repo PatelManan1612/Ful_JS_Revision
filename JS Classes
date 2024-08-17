@@ -1,0 +1,141 @@
+
+In JavaScript, classes are templates for creating objects. They encapsulate data with code to work on that data. JavaScript classes were introduced in ES6 (2015) and are syntactical sugar over JavaScript's existing prototype-based inheritance.
+
+### **Basic Class Syntax**
+
+A class is defined using the `class` keyword, followed by the class name.
+
+```javascript
+class Person {
+    constructor() {
+        // This is the default constructor
+        this.name = "John Doe";
+        this.age = 30;
+    }
+}
+
+// Creating an instance of the class
+const person1 = new Person();
+console.log(person1.name); // John Doe
+console.log(person1.age);  // 30
+```
+
+### **Default Constructor**
+
+A class can have a default constructor, which is a special method called when an instance of the class is created. If no constructor is explicitly defined, JavaScript provides a default constructor.
+
+```javascript
+class Animal {
+    // Default constructor
+    constructor() {
+        this.type = "Dog";
+        this.sound = "Bark";
+    }
+}
+
+const myPet = new Animal();
+console.log(myPet.type);  // Dog
+console.log(myPet.sound); // Bark
+```
+
+### **Parameterized Constructor**
+
+A constructor can also accept parameters to initialize object properties.
+
+```javascript
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+// Creating an instance with parameters
+const person2 = new Person("Alice", 25);
+console.log(person2.name); // Alice
+console.log(person2.age);  // 25
+```
+
+### **Class Methods**
+
+Class methods are functions that belong to the class. They are defined inside the class but outside the constructor. Methods do not use the `function` keyword.
+
+```javascript
+class Car {
+    constructor(brand, model) {
+        this.brand = brand;
+        this.model = model;
+    }
+
+    // Class method
+    start() {
+        console.log(`${this.brand} ${this.model} is starting...`);
+    }
+}
+
+// Creating an instance of the class
+const myCar = new Car("Tesla", "Model S");
+myCar.start(); // Tesla Model S is starting...
+```
+
+### **Parameterized Method**
+
+Class methods can also accept parameters, just like regular functions.
+
+```javascript
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Parameterized method
+    area(unit) {
+        const area = this.width * this.height;
+        return `${area} ${unit}`;
+    }
+}
+
+// Creating an instance
+const myRectangle = new Rectangle(5, 10);
+console.log(myRectangle.area("sq meters")); // 50 sq meters
+```
+
+### **Summary**
+
+- **Classes** in JavaScript are blueprints for creating objects.
+- **Default constructors** are provided if no constructor is explicitly defined.
+- **Parameterized constructors** allow passing values when creating instances of the class.
+- **Class methods** are functions inside classes that define the behavior of objects created from the class.
+- **Parameterized methods** allow passing arguments to class methods, providing more flexibility.
+
+### **Example with All Concepts Combined**
+
+```javascript
+class Employee {
+    // Parameterized constructor
+    constructor(name, position, salary) {
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+    }
+
+    // Class method
+    displayInfo() {
+        console.log(`Name: ${this.name}, Position: ${this.position}`);
+    }
+
+    // Parameterized method
+    updateSalary(newSalary) {
+        this.salary = newSalary;
+        console.log(`Updated Salary for ${this.name}: ${this.salary}`);
+    }
+}
+
+// Creating an instance of Employee
+const emp1 = new Employee("Bob", "Developer", 50000);
+
+// Using class methods
+emp1.displayInfo(); // Name: Bob, Position: Developer
+emp1.updateSalary(60000); // Updated Salary for Bob: 60000
+```
