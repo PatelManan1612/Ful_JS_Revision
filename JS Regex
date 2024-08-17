@@ -1,0 +1,108 @@
+JavaScript Regex (Regular Expressions) are patterns used to match character combinations in strings. They are powerful tools for searching, extracting, and manipulating text based on patterns.
+
+### **Basic Syntax of Regex in JavaScript**
+
+A regex pattern can be created in two ways:
+1. **Using a regex literal:** 
+   ```javascript
+   const regex = /pattern/flags;
+   ```
+2. **Using the `RegExp` constructor:**
+   ```javascript
+   const regex = new RegExp('pattern', 'flags');
+   ```
+
+### **Common Flags**
+- `g`: Global search (find all matches rather than stopping after the first match).
+- `i`: Case-insensitive search.
+- `m`: Multi-line search.
+
+### **Basic Regex Patterns**
+- `.`: Any single character except newline.
+- `\d`: Any digit (equivalent to `[0-9]`).
+- `\D`: Any non-digit character.
+- `\w`: Any word character (alphanumeric and underscore, `[A-Za-z0-9_]`).
+- `\W`: Any non-word character.
+- `\s`: Any whitespace character (space, tab, etc.).
+- `\S`: Any non-whitespace character.
+- `^`: Start of string or line.
+- `$`: End of string or line.
+- `[]`: Character set (e.g., `[abc]` matches any of `a`, `b`, or `c`).
+- `|`: Alternation (logical OR, matches one pattern or the other).
+- `+`: One or more occurrences of the preceding element.
+- `*`: Zero or more occurrences of the preceding element.
+- `?`: Zero or one occurrence of the preceding element.
+- `{n,m}`: Matches between `n` and `m` occurrences of the preceding element.
+
+### **Regex Examples**
+
+#### 1. **Basic Match**
+```javascript
+const str = "Hello, World!";
+const regex = /Hello/;
+console.log(regex.test(str)); // true
+```
+
+#### 2. **Global and Case-Insensitive Search**
+```javascript
+const text = "Hello, hello, HELLO!";
+const regexGlobalCaseInsensitive = /hello/gi;
+console.log(text.match(regexGlobalCaseInsensitive)); // ["Hello", "hello", "HELLO"]
+```
+
+#### 3. **Using `match()` Method**
+- Extracts matches from a string.
+```javascript
+const text2 = "The rain in Spain stays mainly in the plain";
+const regex2 = /ain/g;
+console.log(text2.match(regex2)); // ["ain", "ain", "ain"]
+```
+
+#### 4. **Using `replace()` Method**
+- Replaces matched substrings in a string.
+```javascript
+const text3 = "I like cats";
+const regex3 = /cats/;
+const result = text3.replace(regex3, "dogs");
+console.log(result); // "I like dogs"
+```
+
+#### 5. **Using `split()` Method**
+- Splits a string based on a regex.
+```javascript
+const text4 = "apple, banana, cherry";
+const regex4 = /,\s*/;
+const fruits = text4.split(regex4);
+console.log(fruits); // ["apple", "banana", "cherry"]
+```
+
+#### 6. **Regex with Quantifiers**
+```javascript
+const text5 = "hellooo";
+const regex5 = /o{2,3}/; // Match "oo" or "ooo"
+console.log(text5.match(regex5)); // "ooo"
+```
+
+#### 7. **Regex to Validate Email**
+```javascript
+const email = "example@example.com";
+const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+console.log(regexEmail.test(email)); // true
+```
+
+#### 8. **Regex for Phone Number Validation**
+```javascript
+const phoneNumber = "123-456-7890";
+const regexPhone = /^\d{3}-\d{3}-\d{4}$/;
+console.log(regexPhone.test(phoneNumber)); // true
+```
+
+### **Escape Characters in Regex**
+Certain characters like `.`, `*`, `+`, `?`, `|`, `{`, `[`, `(`, `)`, `^`, `$`, and `\` have special meanings in regex and need to be escaped with a backslash if you want to search for them literally.
+
+Example:
+```javascript
+const text6 = "This costs $100.";
+const regexDollar = /\$/;
+console.log(regexDollar.test(text6)); // true
+```
