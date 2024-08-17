@@ -1,0 +1,148 @@
+
+JavaScript provides a way to handle errors using various statements and error types. Errors can be built-in or custom and can be caught and managed with `try...catch` blocks. There are different error types to represent specific scenarios.
+
+### **`try...catch`**
+
+The `try...catch` block allows you to handle exceptions in a structured way.
+
+- **`try` block**: The code that might throw an exception is wrapped here.
+- **`catch` block**: This block handles any error that occurs in the `try` block.
+  
+```javascript
+try {
+    let x = undefinedVariable; // This will cause a ReferenceError
+} catch (error) {
+    console.log("An error occurred: " + error.message); // Handles the error
+}
+```
+
+### **`try...catch...else`**
+
+In JavaScript, there's no direct `else` block for `try...catch`. However, you can simulate this by simply adding logic after the `try...catch` block, which executes only when no errors occur.
+
+```javascript
+try {
+    let x = 5;
+} catch (error) {
+    console.log("An error occurred: " + error.message);
+} else {
+    console.log("No errors occurred.");
+}
+```
+
+### **`try...catch...finally`**
+
+The `finally` block executes regardless of whether an error occurs or not. It is useful for cleaning up resources like closing connections or files.
+
+```javascript
+try {
+    let y = 10;
+    let z = y / 0;  // No error, but logic might need cleanup
+} catch (error) {
+    console.log("An error occurred: " + error.message);
+} finally {
+    console.log("Finally block always runs");
+}
+```
+
+### **`throw` Statement**
+
+The `throw` statement allows you to create custom errors in your code. It can be used with any expression, but typically it's used with the `Error` object.
+
+```javascript
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error("Cannot divide by zero");
+    }
+    return a / b;
+}
+
+try {
+    console.log(divide(4, 0));
+} catch (error) {
+    console.log(error.message);  // Outputs: "Cannot divide by zero"
+}
+```
+
+### **Error Object**
+
+When an error is caught, it is passed to the `catch` block as an object. The `Error` object has the following properties:
+
+- **name**: The type of error (e.g., `TypeError`, `ReferenceError`).
+- **message**: The error message.
+- **stack**: A stack trace (useful for debugging).
+
+```javascript
+try {
+    let obj = null;
+    console.log(obj.name);  // Causes a TypeError
+} catch (error) {
+    console.log(error.name);    // TypeError
+    console.log(error.message); // Cannot read property 'name' of null
+    console.log(error.stack);   // Stack trace for debugging
+}
+```
+
+### **Types of Errors**
+
+1. **EvalError**: Represents an error related to the `eval()` function. Although rarely used, it indicates an issue in code evaluated dynamically.
+
+   ```javascript
+   try {
+       throw new EvalError("Eval error occurred");
+   } catch (error) {
+       console.log(error.name + ": " + error.message);  // EvalError: Eval error occurred
+   }
+   ```
+
+2. **RangeError**: Thrown when a number is outside an allowed range.
+
+   ```javascript
+   try {
+       let num = 1;
+       num.toPrecision(500);  // RangeError: toPrecision argument must be between 1 and 100
+   } catch (error) {
+       console.log(error.name + ": " + error.message);
+   }
+   ```
+
+3. **ReferenceError**: Thrown when a reference to an undeclared variable or invalid reference is made.
+
+   ```javascript
+   try {
+       let x = undefinedVariable;  // ReferenceError
+   } catch (error) {
+       console.log(error.name + ": " + error.message);  // ReferenceError: undefinedVariable is not defined
+   }
+   ```
+
+4. **SyntaxError**: Occurs when there is a syntax mistake in the code. This error is typically encountered at parse time.
+
+   ```javascript
+   try {
+       eval("let x === 10;");  // SyntaxError due to invalid syntax
+   } catch (error) {
+       console.log(error.name + ": " + error.message);  // SyntaxError: Unexpected token '==='
+   }
+   ```
+
+5. **TypeError**: Thrown when an operation is performed on the wrong data type.
+
+   ```javascript
+   try {
+       let num = null;
+       num.toUpperCase();  // TypeError: num.toUpperCase is not a function
+   } catch (error) {
+       console.log(error.name + ": " + error.message);
+   }
+   ```
+
+6. **URIError**: Occurs when an invalid URI (Uniform Resource Identifier) is used, for example, in functions like `decodeURI()` or `encodeURI()`.
+
+   ```javascript
+   try {
+       decodeURI("%");  // URIError: URI malformed
+   } catch (error) {
+       console.log(error.name + ": " + error.message);
+   }
+   ```
