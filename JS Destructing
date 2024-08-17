@@ -1,0 +1,121 @@
+
+### 1. **Array Destructuring**
+Array destructuring allows you to unpack values from arrays into variables.
+
+- **Basic Destructuring**
+```javascript
+const arr = [1, 2, 3];
+const [a, b, c] = arr;
+console.log(a, b, c); // 1 2 3
+```
+
+- **Skipping Array Values**
+```javascript
+const arr2 = [1, 2, 3, 4];
+const [first, , third] = arr2;
+console.log(first, third); // 1 3
+```
+
+- **Rest Property in Array Destructuring**
+```javascript
+const arr3 = [1, 2, 3, 4, 5];
+const [firstValue, ...restValues] = arr3;
+console.log(firstValue);  // 1
+console.log(restValues);  // [2, 3, 4, 5]
+```
+
+- **Swapping Variables**
+```javascript
+let x = 1, y = 2;
+[x, y] = [y, x];
+console.log(x, y);  // 2 1
+```
+
+### 2. **Object Destructuring**
+
+Object destructuring allows you to unpack properties from objects into variables.
+
+- **Basic Destructuring**
+```javascript
+const obj = { name: "John", age: 30 };
+const { name, age } = obj;
+console.log(name, age); // John 30
+```
+
+- **Object Property Aliases**
+```javascript
+const obj2 = { n: "John", a: 30 };
+const { n: fullName, a: yearsOld } = obj2;
+console.log(fullName, yearsOld); // John 30
+```
+
+- **Object Default Values**
+```javascript
+const obj3 = { name: "John" };
+const { name, age = 25 } = obj3;  // Default age is 25 if not present
+console.log(name, age); // John 25
+```
+
+- **Rest Property in Object Destructuring**
+```javascript
+const obj4 = { name: "John", age: 30, gender: "male" };
+const { name: fullName2, ...otherDetails } = obj4;
+console.log(fullName2);    // John
+console.log(otherDetails); // { age: 30, gender: "male" }
+```
+
+### 3. **String Destructuring**
+Strings can be destructured into individual characters.
+
+```javascript
+const str = "Hello";
+const [char1, char2, char3] = str;
+console.log(char1, char2, char3); // H e l
+```
+
+### 4. **Destructuring Maps**
+Maps can also be destructured using `for...of`.
+
+```javascript
+const map = new Map();
+map.set("name", "Alice");
+map.set("age", 25);
+
+for (const [key, value] of map) {
+  console.log(key, value);  // name Alice, age 25
+}
+```
+
+### 5. **Array Destructuring with Functions**
+You can return arrays from functions and destructure them.
+
+```javascript
+function getCoordinates() {
+    return [10, 20];
+}
+const [xCoord, yCoord] = getCoordinates();
+console.log(xCoord, yCoord); // 10 20
+```
+
+### 6. **Nested Destructuring**
+You can destructure nested objects and arrays.
+
+- **Object with Nested Object**
+```javascript
+const user = {
+    id: 1,
+    details: {
+        name: "John",
+        age: 30
+    }
+};
+const { details: { name, age } } = user;
+console.log(name, age); // John 30
+```
+
+- **Array with Nested Array**
+```javascript
+const numbers = [1, [2, 3], 4];
+const [first, [second, third]] = numbers;
+console.log(first, second, third); // 1 2 3
+```
