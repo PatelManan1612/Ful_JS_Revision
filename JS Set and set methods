@@ -1,0 +1,143 @@
+In JavaScript, `Set` is a built-in object that allows you to store unique values of any type, whether primitive values or object references.
+
+### **Creating a Set**
+
+You can create a `Set` in a few different ways:
+
+1. **Using the `Set` Constructor**
+
+```javascript
+// Creating an empty Set
+let mySet = new Set();
+```
+
+2. **Creating a Set with Initial Values**
+
+```javascript
+// Creating a Set with initial values
+let mySet = new Set([1, 2, 3, 4, 5]);
+```
+
+### **Adding Elements to a Set**
+
+You use the `add()` method to add elements to a `Set`. The `add()` method ensures that each element is unique in the `Set`.
+
+```javascript
+let mySet = new Set();
+
+// Adding elements to the Set
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+mySet.add(4);
+mySet.add(5);
+```
+
+### **Printing All Elements of a Set**
+
+You can use the `for...of` loop, `forEach` method, or convert the `Set` to an array to print all its elements.
+
+1. **Using `for...of` Loop**
+
+```javascript
+// Printing all elements using for...of loop
+for (let item of mySet) {
+    console.log(item);
+}
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+```
+
+2. **Using `forEach` Method**
+
+```javascript
+// Printing all elements using forEach method
+mySet.forEach(function(value) {
+    console.log(value);
+});
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+```
+
+3. **Converting Set to Array**
+
+```javascript
+// Converting Set to Array and printing
+let setArray = Array.from(mySet);
+console.log(setArray);
+// Output: [1, 2, 3, 4, 5]
+```
+JavaScript `Set` objects come with several methods to interact with the data stored within them. Here’s an explanation and code snippets for the commonly used methods: `has()`, `values()`, `keys()`, and `entries()`.
+
+### 1. **`has()` Method**
+
+The `has()` method checks whether a specific element exists in the `Set`. It returns `true` if the element exists, otherwise `false`.
+
+```javascript
+let mySet = new Set([1, 2, 3]);
+
+console.log(mySet.has(2));  // Output: true
+console.log(mySet.has(5));  // Output: false
+```
+
+### 2. **`values()` Method**
+
+The `values()` method returns a new iterator object that contains the values for each element in the `Set`.
+
+```javascript
+let mySet = new Set([10, 20, 30]);
+
+let iterator = mySet.values();
+
+for (let value of iterator) {
+    console.log(value);
+}
+// Output:
+// 10
+// 20
+// 30
+```
+
+### 3. **`keys()` Method**
+
+The `keys()` method in a `Set` is identical to the `values()` method because `Set` objects do not have keys (like objects or maps). It returns a new iterator object that contains the values for each element in the `Set`.
+
+```javascript
+let mySet = new Set([10, 20, 30]);
+
+let iterator = mySet.keys();
+
+for (let key of iterator) {
+    console.log(key);
+}
+// Output:
+// 10
+// 20
+// 30
+```
+
+### 4. **`entries()` Method**
+
+The `entries()` method returns a new iterator object that contains an array of `[value, value]` for each element in the `Set`. Although `Set` objects don't have keys, the `entries()` method provides this format for compatibility with other collections like `Map`.
+
+```javascript
+let mySet = new Set([10, 20, 30]);
+
+let iterator = mySet.entries();
+
+for (let entry of iterator) {
+    console.log(entry);
+}
+// Output:
+// [10, 10]
+// [20, 20]
+// [30, 30]
+```
