@@ -1,0 +1,139 @@
+JavaScript `Map` is a built-in object that holds key-value pairs. Unlike objects, `Map` allows keys of any type, and it maintains the order of the elements based on insertion.
+
+### **1. Creating a Map**
+
+Maps can be created in several ways:
+
+#### **Using the `Map` Constructor**
+You can create an empty `Map` and populate it later.
+```javascript
+let myMap = new Map();
+```
+
+#### **Creating a `Map` with Initial Key-Value Pairs**
+You can initialize a `Map` with key-value pairs in an array.
+```javascript
+let myMap = new Map([
+    ['key1', 'value1'],
+    ['key2', 'value2']
+]);
+```
+
+### **2. Adding Elements to a Map**
+
+The `set()` method is used to add key-value pairs to a `Map`.
+
+```javascript
+myMap.set('key1', 'value1');
+myMap.set('key2', 'value2');
+console.log(myMap); // Map(2) { 'key1' => 'value1', 'key2' => 'value2' }
+```
+
+### **3. Accessing Elements from a Map**
+
+The `get()` method retrieves the value for a specific key.
+
+```javascript
+console.log(myMap.get('key1')); // Output: value1
+console.log(myMap.get('key2')); // Output: value2
+```
+
+### **4. Map Size**
+
+The `size` property returns the number of key-value pairs in the `Map`.
+
+```javascript
+console.log(myMap.size); // Output: 2
+```
+
+### **5. Removing Elements from a Map**
+
+- **`delete()`**: Removes an element by its key.
+- **`clear()`**: Removes all elements from the `Map`.
+
+```javascript
+myMap.delete('key1'); // Removes 'key1'
+console.log(myMap); // Output: Map(1) { 'key2' => 'value2' }
+
+myMap.clear(); // Removes all elements
+console.log(myMap); // Output: Map(0) {}
+```
+
+### **6. Iterating Over a Map**
+
+#### **Using `forEach()` Method**
+
+The `forEach()` method allows you to iterate through the key-value pairs of the `Map`.
+
+```javascript
+myMap.set('key1', 'value1');
+myMap.set('key2', 'value2');
+
+myMap.forEach((value, key) => {
+    console.log(`${key} => ${value}`);
+});
+// Output:
+// key1 => value1
+// key2 => value2
+```
+
+#### **Using `entries()` Method**
+
+The `entries()` method returns an iterator object containing `[key, value]` pairs.
+
+```javascript
+for (let [key, value] of myMap.entries()) {
+    console.log(key, value);
+}
+// Output:
+// key1 value1
+// key2 value2
+```
+
+#### **Using `keys()` Method**
+
+The `keys()` method returns an iterator with all the keys in the `Map`.
+
+```javascript
+for (let key of myMap.keys()) {
+    console.log(key);
+}
+// Output:
+// key1
+// key2
+```
+
+#### **Using `values()` Method**
+
+The `values()` method returns an iterator with all the values in the `Map`.
+
+```javascript
+for (let value of myMap.values()) {
+    console.log(value);
+}
+// Output:
+// value1
+// value2
+```
+
+### **7. Grouping with Maps**
+
+Although `Map` doesn't have a built-in `groupBy` method, you can group elements using a `Map`.
+
+```javascript
+// Example: Grouping by the first letter of names
+let names = ['Alice', 'Bob', 'Charlie', 'Anna', 'Chris'];
+let groupedMap = new Map();
+
+names.forEach(name => {
+    let firstLetter = name[0];
+    if (!groupedMap.has(firstLetter)) {
+        groupedMap.set(firstLetter, [name]);
+    } else {
+        groupedMap.get(firstLetter).push(name);
+    }
+});
+
+console.log(groupedMap);
+// Output: Map(2) { 'A' => ['Alice', 'Anna'], 'B' => ['Bob'], 'C' => ['Charlie', 'Chris'] }
+```
