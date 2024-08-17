@@ -1,0 +1,92 @@
+The `this` keyword in JavaScript behaves differently depending on how it is used. It is essentially a reference to the object that is currently executing the code.
+
+### **`this` Alone**
+
+When used alone in global scope, `this` refers to the global object (e.g., `window` in browsers).
+
+```javascript
+console.log(this); // In a browser, this refers to the window object
+```
+
+In strict mode (`"use strict";`), `this` will be `undefined` when used alone.
+
+```javascript
+"use strict";
+console.log(this); // undefined
+```
+
+### **`this` in a Method**
+
+When used in an object method, `this` refers to the object the method belongs to.
+
+```javascript
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+console.log(person.fullName()); // John Doe
+```
+
+In this case, `this` refers to the `person` object.
+
+### **`this` in a Function**
+
+In a function, `this` refers to the global object (in non-strict mode). In strict mode, it will be `undefined`.
+
+```javascript
+function showThis() {
+    console.log(this);
+}
+
+showThis(); // In a browser, this will log the global object (window) in non-strict mode
+```
+
+In strict mode:
+
+```javascript
+"use strict";
+
+function showThis() {
+    console.log(this);
+}
+
+showThis(); // undefined
+```
+
+### **`this` in a Strict Function**
+
+In strict mode, `this` remains `undefined` unless the function is called as a method of an object or explicitly bound using `call()`, `apply()`, or `bind()`.
+
+```javascript
+"use strict";
+function showThis() {
+    console.log(this); // undefined
+}
+showThis();
+```
+
+### **`this` in Event Handlers**
+
+In event handlers, `this` refers to the element that received the event.
+
+```javascript
+document.getElementById("myButton").addEventListener("click", function() {
+    console.log(this); // Refers to the button element
+});
+```
+
+The value of `this` changes based on how and where the function is invoked. Here's an example of an event handler:
+
+```html
+<button id="myButton">Click Me</button>
+
+<script>
+document.getElementById("myButton").addEventListener("click", function() {
+    console.log(this); // Refers to the button element
+});
+</script>
+```
