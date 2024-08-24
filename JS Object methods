@@ -1,0 +1,98 @@
+
+### 1. **`Object.assign(target, source)`**
+The `Object.assign()` method copies all enumerable properties from one or more source objects to a target object. It returns the modified target object.
+
+```javascript
+const target = { a: 1 };
+const source = { b: 2, c: 3 };
+
+const result = Object.assign(target, source);
+
+console.log(result); // { a: 1, b: 2, c: 3 }
+```
+
+### 2. **`Object.create(object)`**
+The `Object.create()` method creates a new object using an existing object as the prototype.
+
+```javascript
+const person = {
+  greet: function() {
+    console.log("Hello!");
+  }
+};
+
+const john = Object.create(person);
+john.name = "John";
+
+john.greet(); // Hello!
+```
+
+### 3. **`Object.entries(object)`**
+The `Object.entries()` method returns an array of a given object’s key/value pairs.
+
+```javascript
+const person = { name: "John", age: 30 };
+
+const entries = Object.entries(person);
+
+console.log(entries); // [ ['name', 'John'], ['age', 30] ]
+```
+
+### 4. **`Object.fromEntries()`**
+The `Object.fromEntries()` method transforms a list of key-value pairs into an object.
+
+```javascript
+const entries = [
+  ['name', 'John'],
+  ['age', 30]
+];
+
+const person = Object.fromEntries(entries);
+
+console.log(person); // { name: 'John', age: 30 }
+```
+
+### 5. **`Object.keys(object)`**
+The `Object.keys()` method returns an array of a given object's property names.
+
+```javascript
+const person = { name: "John", age: 30 };
+
+const keys = Object.keys(person);
+
+console.log(keys); // ['name', 'age']
+```
+
+### 6. **`Object.values(object)`**
+The `Object.values()` method returns an array of a given object's property values.
+
+```javascript
+const person = { name: "John", age: 30 };
+
+const values = Object.values(person);
+
+console.log(values); // ['John', 30]
+```
+
+### 7. **`Object.groupBy(object, callback)`**
+The `Object.groupBy()` method groups the properties of an object according to a function. (Note: This is part of the proposed ECMAScript Stage 1 and may not be fully supported in all environments yet.)
+
+```javascript
+const people = [
+  { name: "Alice", age: 21 },
+  { name: "Bob", age: 21 },
+  { name: "Charlie", age: 25 }
+];
+
+const groupByAge = Object.groupBy(people, person => person.age);
+
+console.log(groupByAge);
+/*
+{
+  21: [{ name: 'Alice', age: 21 }, { name: 'Bob', age: 21 }],
+  25: [{ name: 'Charlie', age: 25 }]
+}
+*/
+```
+
+These methods hel
