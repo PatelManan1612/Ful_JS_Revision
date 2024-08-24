@@ -1,0 +1,58 @@
+
+### 1. **Normal Function**
+A normal function is defined using the `function` keyword.
+
+```javascript
+function sayHello() {
+    console.log("Hello, World!");
+}
+
+sayHello();  // Output: Hello, World!
+```
+
+### 2. **Function Expression**
+A function can also be defined as an expression and assigned to a variable.
+
+```javascript
+const greet = function() {
+    console.log("Hello from a function expression!");
+};
+
+greet();  // Output: Hello from a function expression!
+```
+
+### 3. **Arrow Function**
+Arrow functions provide a concise syntax for defining functions. They are especially useful for anonymous functions.
+
+```javascript
+const greetArrow = () => {
+    console.log("Hello from an arrow function!");
+};
+
+greetArrow();  // Output: Hello from an arrow function!
+```
+
+### 4. **Self-Invoking (Immediately Invoked) Function**
+A self-invoking function is executed immediately after it is defined. It is typically wrapped in parentheses.
+
+```javascript
+(function() {
+    console.log("Hello from a self-invoking function!");
+})();  // Output: Hello from a self-invoking function!
+```
+
+### 5. **Function Constructor**
+Functions can also be created using the `Function` constructor. This is not commonly used but is valid.
+
+```javascript
+const sayHi = new Function('console.log("Hello from a function constructor!");');
+
+sayHi();  // Output: Hello from a function constructor!
+```
+
+### Summary:
+- **Normal function**: The traditional way of declaring a function using the `function` keyword.
+- **Function expression**: A function defined and assigned to a variable.
+- **Arrow function**: A shorter syntax introduced in ES6.
+- **Self-invoking function**: A function that is executed immediately after it's created.
+- **Function constructor**: A less common way of creating functions dynamically using the `Function` constructor.
