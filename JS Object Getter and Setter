@@ -1,0 +1,91 @@
+JavaScript provides the ability to define `getter` and `setter` methods on an object, which allow you to control how properties are accessed and modified. These are useful when you want to perform additional logic when getting or setting a property.
+
+### 1. **Getters**
+A getter method is used to bind the property to a function that will be called when that property is accessed.
+
+### Syntax
+```javascript
+get propertyName() {
+  // return the value or perform any logic
+}
+```
+
+### Example
+```javascript
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  
+  // Getter for fullName
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+};
+
+console.log(person.fullName); // John Doe
+```
+
+### 2. **Setters**
+A setter method is used to bind the property to a function that will be called when that property is assigned a value.
+
+### Syntax
+```javascript
+set propertyName(value) {
+  // set the value or perform any logic
+}
+```
+
+### Example
+```javascript
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  
+  // Setter for fullName
+  set fullName(name) {
+    const parts = name.split(' ');
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  }
+};
+
+// Using the setter
+person.fullName = 'Jane Smith';
+
+console.log(person.firstName); // Jane
+console.log(person.lastName);  // Smith
+```
+
+### Combining Getters and Setters
+
+You can define both getter and setter for the same property:
+
+```javascript
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  
+  // Getter
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  
+  // Setter
+  set fullName(name) {
+    const parts = name.split(' ');
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  }
+};
+
+// Using the setter
+person.fullName = 'Jane Smith';
+
+console.log(person.fullName); // Jane Smith
+```
+
+Why Using Getters and Setters?
+It gives simpler syntax
+It allows equal syntax for properties and methods
+It can secure better data quality
+It is useful for doing things behind-the-scenes
