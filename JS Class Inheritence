@@ -1,0 +1,78 @@
+In JavaScript, classes can inherit properties and methods from other classes using the `extends` keyword. This allows you to create a child class that inherits from a parent class, and you can also use the `super` keyword to call the parent class's constructor and methods.
+
+### Basic Syntax of Class Inheritance
+```javascript
+class ParentClass {
+    constructor(name) {
+        this.name = name;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name}.`);
+    }
+}
+
+class ChildClass extends ParentClass {
+    constructor(name, age) {
+        super(name);  // Calls the parent class constructor
+        this.age = age;
+    }
+
+    introduce() {
+        console.log(`I am ${this.name}, and I am ${this.age} years old.`);
+    }
+}
+
+const child = new ChildClass("Alice", 25);
+child.greet();        // Output: Hello, my name is Alice.
+child.introduce();    // Output: I am Alice, and I am 25 years old.
+```
+
+### Explanation:
+
+1. **Parent Class**:  
+   - The `ParentClass` defines a constructor that takes a `name` parameter and assigns it to `this.name`.
+   - The `greet()` method prints a greeting message using the `name` property.
+
+2. **Child Class**:  
+   - The `ChildClass` extends the `ParentClass` using the `extends` keyword. This means that the `ChildClass` inherits all the properties and methods of the `ParentClass`.
+   - The `ChildClass` has its own constructor that takes two arguments: `name` and `age`. It uses `super(name)` to call the parent class constructor, ensuring that `this.name` is set correctly.
+   - The `ChildClass` also defines a new method `introduce()` that prints the `name` and `age`.
+
+3. **Using `super`**:  
+   - The `super()` function is used to call the constructor of the parent class. It must be called before accessing `this` in the child class constructor.
+   - You can also use `super.methodName()` to call methods from the parent class.
+
+### Overriding Methods
+
+Child classes can also override methods from the parent class.
+
+```javascript
+class Animal {
+    speak() {
+        console.log("The animal makes a sound.");
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log("The dog barks.");
+    }
+}
+
+const dog = new Dog();
+dog.speak();  // Output: The dog barks.
+```
+
+In this example, the `speak()` method in the `Dog` class overrides the `speak()` method in the `Animal` class.
+
+### Inheriting Properties and Methods
+- The child class inherits all the properties and methods of the parent class, except for private methods (those defined inside the constructor using closures).
+- Methods can be overridden in the child class, but the parent class method can still be accessed using `super.methodName()`.
+
+### Summary:
+- **`extends`**: Used to inherit properties and methods from a parent class.
+- **`super()`**: Used to call the parent class constructor and methods within the child class.
+- Child classes can have their own properties and methods, and they can override parent class methods.
+
+Class inheritance is a powerful feature in JavaScript that allows for code reuse and the creation of hierarchical class structures.
