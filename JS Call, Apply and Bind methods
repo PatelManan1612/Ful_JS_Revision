@@ -1,0 +1,79 @@
+In JavaScript, the `call()`, `apply()`, and `bind()` methods are used to control the value of `this` and invoke functions in specific contexts.
+
+### 1. **`call()` Method**
+The `call()` method calls a function with a given `this` value and arguments provided individually.
+
+#### Syntax:
+```javascript
+function.call(thisArg, arg1, arg2, ...)
+```
+
+#### Example:
+```javascript
+const person = {
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+const person1 = {
+    firstName: "John",
+    lastName: "Doe"
+};
+
+console.log(person.fullName.call(person1));  // Output: John Doe
+```
+
+In this example, the `fullName` function is called on `person1` using `call()`, and `this` inside the function refers to `person1`.
+
+### 2. **`apply()` Method**
+The `apply()` method is similar to `call()`, but the arguments are passed as an array.
+
+#### Syntax:
+```javascript
+function.apply(thisArg, [argsArray])
+```
+
+#### Example:
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+function sum(a, b, c, d, e) {
+    return a + b + c + d + e;
+}
+
+console.log(sum.apply(null, numbers));  // Output: 15
+```
+
+In this example, `apply()` is used to pass the array `numbers` as arguments to the `sum` function.
+
+### 3. **`bind()` Method**
+The `bind()` method creates a new function that, when called, has its `this` keyword set to the provided value, with a given sequence of arguments.
+
+#### Syntax:
+```javascript
+const newFunction = function.bind(thisArg, arg1, arg2, ...)
+```
+
+#### Example:
+```javascript
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+const getFullName = person.fullName.bind(person);
+console.log(getFullName());  // Output: John Doe
+```
+
+In this example, `bind()` creates a new function `getFullName` that is bound to `person`, so `this` inside the function always refers to `person`.
+
+### Summary:
+- **`call()`**: Invokes a function with a specific `this` context and arguments passed individually.
+- **`apply()`**: Similar to `call()`, but arguments are passed as an array.
+- **`bind()`**: Returns a new function with a bound `this` context, which can be invoked later.
+
+These methods are commonly used in scenarios where you need to control the execution context of a function explicitly.
