@@ -1,0 +1,57 @@
+In JavaScript, every object has a prototype. A prototype is an object from which other objects inherit properties. You can add properties and methods to objects using the `prototype` property.
+
+### **Object Prototype**
+
+By default, every JavaScript object has a prototype. For instance, if you create a function, it will have a `prototype` property that can be used to add new properties and methods that will be inherited by all instances of that function.
+
+### **Adding Properties and Methods Using Prototype**
+
+#### 1. **Adding Properties Using Prototype**
+
+You can add a property to a constructor function's prototype. All instances created from that constructor will have access to the property.
+
+```javascript
+// Constructor function
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Adding a property to the prototype
+Person.prototype.nationality = "American";
+
+// Creating an instance
+const john = new Person("John", 30);
+
+console.log(john.name);         // John
+console.log(john.nationality);  // American (inherited from the prototype)
+```
+
+#### 2. **Adding Methods Using Prototype**
+
+Similarly, you can add methods to a constructor function’s prototype, which will be available to all instances created from that constructor.
+
+```javascript
+// Constructor function
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Adding a method to the prototype
+Person.prototype.greet = function() {
+  console.log("Hello, my name is " + this.name);
+};
+
+// Creating an instance
+const john = new Person("John", 30);
+
+// Calling the method defined on the prototype
+john.greet(); // Hello, my name is John
+```
+
+### **Benefits of Using Prototype**
+
+- **Memory efficiency**: Instead of adding methods and properties directly to each object instance (which would consume more memory), prototypes allow sharing the methods and properties across all instances.
+  
+- **Inheritance**: Prototype chaining allows objects to inherit methods and properties from their prototypes.
