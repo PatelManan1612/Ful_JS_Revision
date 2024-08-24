@@ -1,0 +1,90 @@
+
+### 1. **`Object.preventExtensions(object)`**
+This method prevents new properties from being added to an object but does not affect existing properties.
+
+```javascript
+const person = { name: "John" };
+
+// Prevents adding new properties
+Object.preventExtensions(person);
+
+person.age = 30;  // This will not work
+console.log(person.age);  // undefined
+```
+
+### 2. **`Object.isExtensible(object)`**
+This method returns `true` if new properties can be added to an object, otherwise `false`.
+
+```javascript
+const person = { name: "John" };
+
+console.log(Object.isExtensible(person));  // true
+
+Object.preventExtensions(person);
+
+console.log(Object.isExtensible(person));  // false
+```
+
+### 3. **`Object.seal(object)`**
+This method prevents new properties from being added to an object and marks all existing properties as non-configurable. Existing properties can still be modified.
+
+```javascript
+const person = { name: "John" };
+
+// Seals the object
+Object.seal(person);
+
+person.age = 30;  // This will not work
+delete person.name;  // This will not work
+person.name = "Jane";  // This works
+console.log(person.name);  // Jane
+```
+
+### 4. **`Object.isSealed(object)`**
+This method returns `true` if the object is sealed, otherwise `false`.
+
+```javascript
+const person = { name: "John" };
+
+console.log(Object.isSealed(person));  // false
+
+Object.seal(person);
+
+console.log(Object.isSealed(person));  // true
+```
+
+### 5. **`Object.freeze(object)`**
+This method prevents new properties from being added, existing properties from being removed, and marks all existing properties as non-configurable and non-writable. The object becomes immutable.
+
+```javascript
+const person = { name: "John" };
+
+// Freezes the object
+Object.freeze(person);
+
+person.age = 30;  // This will not work
+delete person.name;  // This will not work
+person.name = "Jane";  // This will not work
+console.log(person.name);  // John
+```
+
+### 6. **`Object.isFrozen(object)`**
+This method returns `true` if the object is frozen, otherwise `false`.
+
+```javascript
+const person = { name: "John" };
+
+console.log(Object.isFrozen(person));  // false
+
+Object.freeze(person);
+
+console.log(Object.isFrozen(person));  // true
+```
+
+### Summary:
+- **`Object.preventExtensions()`**: Stops the addition of new properties.
+- **`Object.isExtensible()`**: Checks if new properties can be added.
+- **`Object.seal()`**: Stops the addition and deletion of properties, but existing properties can still be modified.
+- **`Object.isSealed()`**: Checks if the object is sealed.
+- **`Object.freeze()`**: Stops any modifications, additions, or deletions of properties, making the object immutable.
+- **`Object.isFrozen()`**: Checks if the object is frozen.
