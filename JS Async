@@ -1,0 +1,120 @@
+JavaScript provides multiple ways to handle asynchronous operations, such as callbacks, promises, and `async/await`. Let's go through each concept with code snippets and explanations.
+
+### 1. **Callbacks**
+A callback is a function passed as an argument to another function, which is executed after the completion of the asynchronous operation.
+
+#### Example:
+```javascript
+function fetchData(callback) {
+    setTimeout(() => {
+        console.log("Data fetched!");
+        callback();  // Executing the callback function
+    }, 2000);
+}
+
+function processData() {
+    console.log("Processing data...");
+}
+
+fetchData(processData);
+```
+In this example, `fetchData` simulates an asynchronous operation (e.g., fetching data), and once it's complete, it calls `processData` as the callback function.
+
+### 2. **Asynchronous Operations**
+Asynchronous operations in JavaScript allow code execution to continue while waiting for a time-consuming task, like a network request, to complete.
+
+#### Example:
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+    console.log("This runs asynchronously after 2 seconds.");
+}, 2000);
+
+console.log("End");
+```
+In this example, the output will be:
+```
+Start
+End
+This runs asynchronously after 2 seconds.
+```
+The `setTimeout` function is asynchronous, so "End" is printed before the asynchronous operation completes.
+
+### 3. **Promises**
+A promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It has three states:
+- **Pending**: The initial state.
+- **Fulfilled**: The operation completed successfully.
+- **Rejected**: The operation failed.
+
+#### Example:
+```javascript
+const fetchData = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let success = true;  // Simulate success or failure
+        if (success) {
+            resolve("Data fetched successfully!");
+        } else {
+            reject("Failed to fetch data.");
+        }
+    }, 2000);
+});
+
+fetchData
+    .then((message) => {
+        console.log(message);  // If the promise is fulfilled
+    })
+    .catch((error) => {
+        console.log(error);  // If the promise is rejected
+    });
+```
+Here, `fetchData` is a promise that either resolves or rejects after 2 seconds. The `.then()` method is used to handle the resolved value, and `.catch()` is used to handle the rejection.
+
+### 4. **Async/Await**
+`async` and `await` provide a cleaner syntax for handling promises. An `async` function returns a promise, and `await` pauses the execution of the function until the promise is resolved or rejected.
+
+#### Example:
+```javascript
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data fetched successfully!");
+        }, 2000);
+    });
+}
+
+async function processData() {
+    console.log("Start processing...");
+    
+    try {
+        const data = await fetchData();  // Waits for the promise to resolve
+        console.log(data);  // Output: Data fetched successfully!
+    } catch (error) {
+        console.log(error);
+    }
+    
+    console.log("Processing done!");
+}
+
+processData();
+```
+In this example:
+- `fetchData` returns a promise.
+- `processData` is an `async` function that uses `await` to wait for `fetchData` to resolve before continuing execution.
+- The output will be:
+  ```
+  Start processing...
+  Data fetched successfully!
+  Processing done!
+  ```
+
+### Key Differences:
+- **Callbacks**: These were the traditional way to handle asynchronous operations. However, they can lead to "callback hell" if not handled carefully.
+- **Promises**: These provide a cleaner and more readable way to handle asynchronous operations than callbacks, avoiding callback hell.
+- **Async/Await**: This is built on top of promises and provides an even more synchronous-looking way to write asynchronous code.
+
+### Summary:
+- **Callbacks**: Functions passed as arguments that are called after an asynchronous operation completes.
+- **Asynchronous Operations**: Code that allows execution to continue while waiting for time-consuming operations to complete.
+- **Promises**: Objects representing the eventual result of an asynchronous operation.
+- **Async/Await**: Syntax sugar built on promises that makes asynchronous code look more synchronous.
