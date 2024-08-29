@@ -1,0 +1,114 @@
+
+### Properties and Methods of `window.history`
+
+1. **`window.history.length`**
+   - **Description**: Returns the number of entries in the history stack.
+   - **Example**:
+
+   ```javascript
+   console.log("Number of history entries: " + window.history.length);
+   ```
+
+2. **`window.history.back()`**
+   - **Description**: Loads the previous URL in the history list (equivalent to clicking the browser's back button).
+   - **Example**:
+
+   ```javascript
+   function goBack() {
+       window.history.back();
+   }
+   ```
+
+3. **`window.history.forward()`**
+   - **Description**: Loads the next URL in the history list (equivalent to clicking the browser's forward button).
+   - **Example**:
+
+   ```javascript
+   function goForward() {
+       window.history.forward();
+   }
+   ```
+
+4. **`window.history.go(n)`**
+   - **Description**: Loads a specific page from the session history. The parameter `n` can be:
+     - `0` to reload the current page.
+     - `-1` to go back one page.
+     - `1` to go forward one page.
+   - **Example**:
+
+   ```javascript
+   function goBackTwoPages() {
+       window.history.go(-2);
+   }
+
+   function goForwardThreePages() {
+       window.history.go(3);
+   }
+   ```
+
+5. **`window.history.pushState(stateObject, title, url)`**
+   - **Description**: Adds a new entry to the browser's history stack. This does not reload the page.
+   - **Parameters**:
+     - `stateObject`: The state object associated with the new history entry.
+     - `title`: The title of the new history entry (not widely used).
+     - `url`: The URL of the new history entry.
+   - **Example**:
+
+   ```javascript
+   window.history.pushState({ page: 1 }, "Title 1", "/page1");
+   ```
+
+6. **`window.history.replaceState(stateObject, title, url)`**
+   - **Description**: Modifies the current history entry without adding a new entry to the stack.
+   - **Example**:
+
+   ```javascript
+   window.history.replaceState({ page: 2 }, "Title 2", "/page2");
+   ```
+
+### Example Usage of `window.history`
+
+Here's a simple example that demonstrates some of the `window.history` methods:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window History Example</title>
+</head>
+<body>
+    <h1>JavaScript Window History</h1>
+
+    <button onclick="goBack()">Go Back</button>
+    <button onclick="goForward()">Go Forward</button>
+    <button onclick="goBackTwoPages()">Go Back 2 Pages</button>
+    <button onclick="goForwardThreePages()">Go Forward 3 Pages</button>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            window.history.forward();
+        }
+
+        function goBackTwoPages() {
+            window.history.go(-2);
+        }
+
+        function goForwardThreePages() {
+            window.history.go(3);
+        }
+
+        // Example of using pushState and replaceState
+        window.history.pushState({ page: 1 }, "Page 1", "/page1");
+        window.history.replaceState({ page: 2 }, "Page 2", "/page2");
+
+        console.log("Number of history entries: " + window.history.length);
+    </script>
+</body>
+</html>
+```
