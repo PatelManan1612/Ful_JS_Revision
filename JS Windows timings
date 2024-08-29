@@ -1,0 +1,67 @@
+JavaScript provides timing events that allow you to execute code after a certain amount of time or at regular intervals. These events are primarily handled by two functions: `setTimeout` and `setInterval`.
+
+### 1. `setTimeout()`
+
+The `setTimeout()` method calls a function or evaluates an expression after a specified number of milliseconds. It's used to execute code once after the delay.
+
+#### Syntax:
+```javascript
+let timeoutID = setTimeout(function, delay);
+```
+
+- `function`: The function to be executed after the timer expires.
+- `delay`: The number of milliseconds to wait before executing the code.
+
+#### Example:
+```javascript
+function greet() {
+    console.log("Hello, World!");
+}
+
+setTimeout(greet, 2000); // The function `greet` will be executed after 2 seconds.
+```
+
+- **Explanation**: In this example, the `greet` function is called after a delay of 2000 milliseconds (2 seconds).
+
+#### Clearing a Timeout:
+You can stop a timeout from executing by using the `clearTimeout()` method.
+
+```javascript
+let timeoutID = setTimeout(greet, 2000);
+clearTimeout(timeoutID); // The `greet` function will not be executed.
+```
+
+- **Explanation**: Here, the timeout is cleared before the `greet` function is called, so it never executes.
+
+### 2. `setInterval()`
+
+The `setInterval()` method calls a function or evaluates an expression at specified intervals (in milliseconds). It's used to execute code repeatedly with a fixed time delay between each call.
+
+#### Syntax:
+```javascript
+let intervalID = setInterval(function, delay);
+```
+
+- `function`: The function to be executed repeatedly.
+- `delay`: The number of milliseconds to wait before each execution.
+
+#### Example:
+```javascript
+function showTime() {
+    console.log(new Date().toLocaleTimeString());
+}
+
+setInterval(showTime, 1000); // The `showTime` function is called every second.
+```
+
+- **Explanation**: In this example, the `showTime` function is executed every 1000 milliseconds (1 second), continuously displaying the current time in the console.
+
+#### Clearing an Interval:
+You can stop the repeated execution by using the `clearInterval()` method.
+
+```javascript
+let intervalID = setInterval(showTime, 1000);
+clearInterval(intervalID); // The `showTime` function will no longer be executed.
+```
+
+- **Explanation**: Here, the interval is cleared, so the `showTime` function stops executing.
