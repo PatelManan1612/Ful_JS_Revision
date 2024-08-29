@@ -1,0 +1,39 @@
+
+
+### 1. `alert()` Popup
+
+The `alert()` method displays a simple message in a popup box. It is commonly used to show information or warning messages.
+
+```javascript
+alert("This is an alert box!");
+```
+
+- **Example Explanation**: When this code is executed, a popup box with the message "This is an alert box!" will appear. The user can only close the popup by clicking the "OK" button.
+
+### 2. `confirm()` Popup
+
+The `confirm()` method displays a message in a popup box with "OK" and "Cancel" buttons. It is often used to confirm a user's action.
+
+```javascript
+let userConfirmation = confirm("Do you want to proceed?");
+if (userConfirmation) {
+    console.log("User clicked OK.");
+} else {
+    console.log("User clicked Cancel.");
+}
+```
+
+- **Example Explanation**: This code will display a confirmation popup asking "Do you want to proceed?". If the user clicks "OK", the `userConfirmation` variable will be `true`, and "User clicked OK." will be logged to the console. If the user clicks "Cancel", the variable will be `false`, and "User clicked Cancel." will be logged.
+
+### 3. `prompt()` Popup
+
+The `prompt()` method displays a popup box that prompts the user to enter some text. It also has "OK" and "Cancel" buttons.
+
+```javascript
+let userInput = prompt("Please enter your name:", "John Doe");
+if (userInput !== null) {
+    console.log("Hello, " + userInput + "!");
+} else {
+    console.log("User cancelled the prompt.");
+}
+```
