@@ -1,0 +1,127 @@
+
+### Properties of `window.navigator`
+
+1. **`navigator.appName`**
+   - **Description**: Returns the name of the browser.
+   - **Example**:
+
+   ```javascript
+   console.log("Browser Name: " + navigator.appName);
+   ```
+
+2. **`navigator.appVersion`**
+   - **Description**: Returns the version information of the browser as a string.
+   - **Example**:
+
+   ```javascript
+   console.log("Browser Version: " + navigator.appVersion);
+   ```
+
+3. **`navigator.userAgent`**
+   - **Description**: Returns the user agent string for the current browser. This string contains information about the browser, version, and operating system.
+   - **Example**:
+
+   ```javascript
+   console.log("User Agent: " + navigator.userAgent);
+   ```
+
+4. **`navigator.platform`**
+   - **Description**: Returns the platform (operating system) on which the browser is running.
+   - **Example**:
+
+   ```javascript
+   console.log("Platform: " + navigator.platform);
+   ```
+
+5. **`navigator.language`**
+   - **Description**: Returns the preferred language of the user as a string (e.g., "en-US").
+   - **Example**:
+
+   ```javascript
+   console.log("Language: " + navigator.language);
+   ```
+
+6. **`navigator.onLine`**
+   - **Description**: Returns `true` if the browser is online, and `false` if it's offline.
+   - **Example**:
+
+   ```javascript
+   console.log("Online Status: " + navigator.onLine);
+   ```
+
+7. **`navigator.cookieEnabled`**
+   - **Description**: Returns `true` if cookies are enabled in the browser, otherwise `false`.
+   - **Example**:
+
+   ```javascript
+   console.log("Cookies Enabled: " + navigator.cookieEnabled);
+   ```
+
+8. **`navigator.geolocation`**
+   - **Description**: Provides access to the device's location. This is commonly used to retrieve the geographical position of the device.
+   - **Example**:
+
+   ```javascript
+   if (navigator.geolocation) {
+       navigator.geolocation.getCurrentPosition(function(position) {
+           console.log("Latitude: " + position.coords.latitude);
+           console.log("Longitude: " + position.coords.longitude);
+       });
+   } else {
+       console.log("Geolocation is not supported by this browser.");
+   }
+   ```
+
+9. **`navigator.javaEnabled()`**
+   - **Description**: Returns `true` if Java is enabled in the browser, otherwise `false`.
+   - **Example**:
+
+   ```javascript
+   console.log("Java Enabled: " + navigator.javaEnabled());
+   ```
+
+### Example Usage of `window.navigator`
+
+Here's an example that demonstrates some of the properties of the `navigator` object:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator Object Example</title>
+</head>
+<body>
+    <h1>JavaScript Navigator Object</h1>
+
+    <p>Browser Name: <span id="browserName"></span></p>
+    <p>Browser Version: <span id="browserVersion"></span></p>
+    <p>Platform: <span id="platform"></span></p>
+    <p>Language: <span id="language"></span></p>
+    <p>Online Status: <span id="onlineStatus"></span></p>
+    <p>Cookies Enabled: <span id="cookiesEnabled"></span></p>
+    <p>Java Enabled: <span id="javaEnabled"></span></p>
+
+    <script>
+        document.getElementById('browserName').textContent = navigator.appName;
+        document.getElementById('browserVersion').textContent = navigator.appVersion;
+        document.getElementById('platform').textContent = navigator.platform;
+        document.getElementById('language').textContent = navigator.language;
+        document.getElementById('onlineStatus').textContent = navigator.onLine ? "Online" : "Offline";
+        document.getElementById('cookiesEnabled').textContent = navigator.cookieEnabled ? "Yes" : "No";
+        document.getElementById('javaEnabled').textContent = navigator.javaEnabled() ? "Yes" : "No";
+
+        // Example of geolocation
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                console.log("Latitude: " + position.coords.latitude);
+                console.log("Longitude: " + position.coords.longitude);
+            });
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+    </script>
+</body>
+</html>
+```
