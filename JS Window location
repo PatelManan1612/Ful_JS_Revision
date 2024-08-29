@@ -1,0 +1,61 @@
+
+### 1. **`window.location.href`**
+- **Description**: Returns the full URL of the current page, including the protocol, hostname, path, and query parameters.
+- **Example**:
+
+```javascript
+console.log("Current URL: " + window.location.href);
+```
+
+**Output** (example):
+```
+Current URL: https://www.example.com/path/to/page?query=param
+```
+
+### 2. **`window.location.hostname`**
+- **Description**: Returns the domain name of the web host. This does not include the protocol (`http:` or `https:`) or port number.
+- **Example**:
+
+```javascript
+console.log("Host Name: " + window.location.hostname);
+```
+
+**Output** (example):
+```
+Host Name: www.example.com
+```
+
+### 3. **`window.location.pathname`**
+- **Description**: Returns the path and filename of the current page, which is the part of the URL after the domain name.
+- **Example**:
+
+```javascript
+console.log("Path Name: " + window.location.pathname);
+```
+
+**Output** (example):
+```
+Path Name: /path/to/page
+```
+
+### 4. **`window.location.protocol`**
+- **Description**: Returns the protocol used by the URL (`http:` or `https:`).
+- **Example**:
+
+```javascript
+console.log("Protocol: " + window.location.protocol);
+```
+
+**Output** (example):
+```
+Protocol: https:
+```
+
+### 5. **`window.location.assign()`**
+- **Description**: Loads a new document at the specified URL. This method changes the current location and navigates to the new URL.
+- **Example**:
+
+```javascript
+// Navigate to a new URL
+window.location.assign("https://www.example.com");
+```
