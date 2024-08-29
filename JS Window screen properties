@@ -1,0 +1,49 @@
+
+
+### 1. `screen.width`
+- **Description**: Returns the width of the screen in pixels.
+
+```javascript
+let screenWidth = window.screen.width;
+console.log("Screen Width: " + screenWidth + " pixels");
+```
+
+### 2. `screen.height`
+- **Description**: Returns the height of the screen in pixels.
+
+```javascript
+let screenHeight = window.screen.height;
+console.log("Screen Height: " + screenHeight + " pixels");
+```
+
+### 3. `screen.availWidth`
+- **Description**: Returns the available width of the screen (excluding the space occupied by the taskbar or other interface elements).
+
+```javascript
+let availableWidth = window.screen.availWidth;
+console.log("Available Screen Width: " + availableWidth + " pixels");
+```
+
+### 4. `screen.availHeight`
+- **Description**: Returns the available height of the screen (excluding the space occupied by the taskbar or other interface elements).
+
+```javascript
+let availableHeight = window.screen.availHeight;
+console.log("Available Screen Height: " + availableHeight + " pixels");
+```
+
+### 5. `screen.colorDepth`
+- **Description**: Returns the color depth of the screen in bits per pixel.
+
+```javascript
+let colorDepth = window.screen.colorDepth;
+console.log("Color Depth: " + colorDepth + " bits per pixel");
+```
+
+### 6. `screen.pixelDepth`
+- **Description**: Returns the pixel depth of the screen in bits per pixel.
+
+```javascript
+let pixelDepth = window.screen.pixelDepth;
+console.log("Pixel Depth: " + pixelDepth + " bits per pixel");
+```
