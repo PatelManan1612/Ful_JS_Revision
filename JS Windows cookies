@@ -1,0 +1,76 @@
+Cookies are small pieces of data that websites store on a user's browser. JavaScript can create, read, and delete cookies using the `document.cookie` property.
+
+### 1. Creating a Cookie
+
+To create a cookie, you assign a string to `document.cookie`. The string should be in the format `name=value`, and you can optionally add other parameters like `expires`, `path`, `domain`, and `secure`.
+
+#### Syntax:
+```javascript
+document.cookie = "username=Manan; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/";
+```
+
+- **`username=Manan`**: Sets a cookie named `username` with the value `Manan`.
+- **`expires=Fri, 31 Dec 2024 23:59:59 GMT`**: Sets the cookie to expire on December 31, 2024.
+- **`path=/`**: The cookie is accessible throughout the entire domain.
+
+#### Example:
+```javascript
+// Set a cookie named "username" with a value of "Manan"
+document.cookie = "username=Manan; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/";
+
+// Another cookie with a different name and value
+document.cookie = "userRole=Admin; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/";
+```
+
+### 2. Reading a Cookie
+
+You can read all cookies associated with the current document using `document.cookie`. This returns a string containing a semicolon-separated list of cookies.
+
+#### Example:
+```javascript
+let cookies = document.cookie;
+console.log(cookies);
+```
+
+- **Output**: `"username=Manan; userRole=Admin"`
+  
+To get a specific cookie, you would need to parse the string.
+
+#### Example of Parsing a Specific Cookie:
+```javascript
+function getCookie(name) {
+    let cookieArr = document.cookie.split(";");
+
+    for(let i = 0; i < cookieArr.length; i++) {
+        let cookiePair = cookieArr[i].split("=");
+
+        if(name == cookiePair[0].trim()) {
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    return null;
+}
+
+let username = getCookie("username");
+console.log(username); // Outputs: Manan
+```
+
+### 3. Updating a Cookie
+
+To update a cookie, simply create a new cookie with the same name. The old cookie will be overwritten.
+
+#### Example:
+```javascript
+document.cookie = "username=Patel; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/";
+```
+
+- **Explanation**: The `username` cookie is now updated from `Manan` to `Patel`.
+
+### 4. Deleting a Cookie
+
+To delete a cookie, set its `expires` attribute to a past date.
+
+#### Example:
+```javascript
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+```
