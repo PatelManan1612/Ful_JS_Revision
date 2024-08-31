@@ -1,0 +1,138 @@
+
+### 1. Displaying XML Data Using AJAX
+
+First, let's assume you have an XML file (`data.xml`) with the following structure:
+
+```xml
+<employees>
+    <employee>
+        <firstName>John</firstName>
+        <lastName>Doe</lastName>
+    </employee>
+    <employee>
+        <firstName>Jane</firstName>
+        <lastName>Smith</lastName>
+    </employee>
+</employees>
+```
+
+Now, we will use AJAX to fetch this XML data and display it on a web page.
+
+#### HTML Structure:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display XML Data using AJAX</title>
+</head>
+<body>
+    <h1>Employee List</h1>
+    <ul id="employee-list"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+#### JavaScript (AJAX to Fetch XML):
+
+```javascript
+// Create a new XMLHttpRequest object
+const xhr = new XMLHttpRequest();
+
+// Configure it: GET-request for the URL /data.xml
+xhr.open('GET', 'data.xml', true);
+
+// Send the request over the network
+xhr.send();
+
+// This will be called after the response is received
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        // Parse the XML response
+        const xmlDoc = xhr.responseXML;
+        const employees = xmlDoc.getElementsByTagName("employee");
+
+        // Get the HTML element to display the data
+        const employeeList = document.getElementById("employee-list");
+
+        // Loop through each employee node
+        for (let i = 0; i < employees.length; i++) {
+            const firstName = employees[i].getElementsByTagName("firstName")[0].childNodes[0].nodeValue;
+            const lastName = employees[i].getElementsByTagName("lastName")[0].childNodes[0].nodeValue;
+
+            // Create a list item for each employee
+            const li = document.createElement("li");
+            li.textContent = `${firstName} ${lastName}`;
+            employeeList.appendChild(li);
+        }
+    }
+};
+```
+
+### 2. Displaying JSON Data Using AJAX
+
+Now, let's assume you have a JSON file (`data.json`) with the following structure:
+
+```json
+[
+    { "firstName": "John", "lastName": "Doe" },
+    { "firstName": "Jane", "lastName": "Smith" }
+]
+```
+
+We will use AJAX to fetch this JSON data and display it on a web page.
+
+#### HTML Structure:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JSON Data using AJAX</title>
+</head>
+<body>
+    <h1>Employee List</h1>
+    <ul id="employee-list"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+#### JavaScript (AJAX to Fetch JSON):
+
+```javascript
+// Create a new XMLHttpRequest object
+const xhr = new XMLHttpRequest();
+
+// Configure it: GET-request for the URL /data.json
+xhr.open('GET', 'data.json', true);
+
+// Send the request over the network
+xhr.send();
+
+// This will be called after the response is received
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        // Parse the JSON response
+        const data = JSON.parse(xhr.responseText);
+
+        // Get the HTML element to display the data
+        const employeeList = document.getElementById("employee-list");
+
+        // Loop through each employee in the JSON array
+        data.forEach(employee => {
+            // Create a list item for each employee
+            const li = document.createElement("li");
+            li.textContent = `${employee.firstName} ${employee.lastName}`;
+            employeeList.appendChild(li);
+        });
+    }
+};
+```
