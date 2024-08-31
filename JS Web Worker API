@@ -1,0 +1,128 @@
+The Web Worker API in JavaScript allows you to run scripts in background threads. These threads can execute code without affecting the performance of the main page, which is particularly useful for tasks that require significant processing, like data processing or handling complex calculations.
+
+### Overview of Web Workers
+
+Web Workers provide a way to run JavaScript in the background, independent of the user interface. This allows the main thread (usually the UI thread) to run without being slowed down by operations that would otherwise block it.
+
+### Creating a Web Worker
+
+1. **Creating a Worker:**
+
+   To create a web worker, you use the `Worker` constructor, passing in the path to the JavaScript file that contains the worker's code.
+
+   ```javascript
+   const worker = new Worker('worker.js');
+   ```
+
+2. **Sending Messages to the Worker:**
+
+   You can send data to the worker using the `postMessage()` method.
+
+   ```javascript
+   worker.postMessage('Hello, worker!');
+   ```
+
+3. **Receiving Messages from the Worker:**
+
+   The worker can send messages back to the main thread, which can be handled using the `onmessage` event listener.
+
+   ```javascript
+   worker.onmessage = function(event) {
+       console.log('Message received from worker:', event.data);
+   };
+   ```
+
+4. **Worker Code Example:**
+
+   Here's what the `worker.js` file might look like:
+
+   ```javascript
+   // worker.js
+   onmessage = function(event) {
+       console.log('Message received in worker:', event.data);
+       const result = event.data + ' processed by worker';
+       postMessage(result);
+   };
+   ```
+
+### Terminating a Web Worker
+
+- **From the Main Thread:**
+  
+  If you need to stop a worker from the main thread, you can use the `terminate()` method.
+
+  ```javascript
+  worker.terminate();
+  ```
+
+  This will immediately stop the worker and free up resources.
+
+- **From the Worker Itself:**
+  
+  A worker can also stop itself using the `close()` method.
+
+  ```javascript
+  close();
+  ```
+
+### Error Handling
+
+You can handle errors in the worker using the `onerror` event listener.
+
+```javascript
+worker.onerror = function(event) {
+    console.error('Error in worker:', event.message, 'at', event.filename, 'line', event.lineno);
+};
+```
+
+### Example: Using Web Workers
+
+Here is a simple example of using Web Workers:
+
+**Main Script (`main.js`):**
+
+```javascript
+const worker = new Worker('worker.js');
+
+worker.postMessage(5);
+
+worker.onmessage = function(event) {
+    console.log('Factorial:', event.data);
+};
+
+worker.onerror = function(event) {
+    console.error('Error:', event.message);
+};
+```
+
+**Worker Script (`worker.js`):**
+
+```javascript
+function factorial(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+}
+
+onmessage = function(event) {
+    const result = factorial(event.data);
+    postMessage(result);
+};
+```
+
+In this example, the worker calculates the factorial of a number without blocking the main thread.
+
+### When to Use Web Workers
+
+- **Heavy computations:** Running complex calculations or data processing tasks that would otherwise slow down the UI.
+- **Parallel tasks:** Executing parallel tasks that can run independently of each other.
+- **Background operations:** Performing background tasks like data fetching, image processing, or handling large files.
+
+### Limitations
+
+- **No DOM access:** Web Workers don't have access to the DOM. They run in a completely separate context.
+- **Limited scope:** Only some JavaScript APIs are available inside a worker (e.g., `XMLHttpRequest`, `setTimeout`, and WebSockets). Others, like `localStorage` or the `Window` object, are not.
+- **Performance:** While Web Workers can significantly improve performance, spawning too many workers can overwhelm the system.
+
+### Summary
+
+The Web Worker API is a powerful tool in JavaScript for performing background tasks without interrupting the main thread's execution, ensuring smooth and responsive UIs.
