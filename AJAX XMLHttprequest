@@ -1,0 +1,124 @@
+AJAX (Asynchronous JavaScript and XML) is a technique used to create asynchronous web applications. It allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. This means that parts of a web page can be updated without reloading the entire page.
+
+### XMLHttpRequest Object
+
+The `XMLHttpRequest` object is used to interact with servers. It provides a way to make HTTP requests to a server and load the response data back into the application without refreshing the page.
+
+#### Basic Steps to Use `XMLHttpRequest`
+
+1. **Create an `XMLHttpRequest` object:**
+   ```javascript
+   const xhr = new XMLHttpRequest();
+   ```
+
+2. **Open a connection:**
+   ```javascript
+   xhr.open('GET', 'url', true);
+   ```
+   - The first argument specifies the HTTP method (`GET`, `POST`, etc.).
+   - The second argument specifies the URL to which the request is sent.
+   - The third argument specifies whether the request should be asynchronous (`true` or `false`).
+
+3. **Send the request:**
+   ```javascript
+   xhr.send();
+   ```
+
+4. **Monitor the request's state and handle the response:**
+   ```javascript
+   xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+           console.log(xhr.responseText);
+       }
+   };
+   ```
+
+#### Example: Simple GET Request
+
+```javascript
+// Step 1: Create XMLHttpRequest object
+const xhr = new XMLHttpRequest();
+
+// Step 2: Configure it: GET-request for the URL /data
+xhr.open('GET', 'https://api.example.com/data', true);
+
+// Step 3: Send the request over the network
+xhr.send();
+
+// Step 4: This will be called after the response is received
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) { // if done and successful
+        console.log('Response received:', xhr.responseText);
+    } else if (xhr.readyState === 4) {
+        console.error('An error occurred:', xhr.statusText);
+    }
+};
+```
+
+#### Understanding `XMLHttpRequest` Properties and Methods
+
+- **Properties:**
+  - `xhr.readyState`: Holds the status of the `XMLHttpRequest`.
+    - `0`: Request not initialized
+    - `1`: Server connection established
+    - `2`: Request received
+    - `3`: Processing request
+    - `4`: Request finished and response is ready
+  - `xhr.status`: HTTP status code returned by the server (e.g., `200` for OK, `404` for Not Found).
+  - `xhr.responseText`: Returns the response data as a string.
+  - `xhr.responseXML`: Returns the response data as XML data.
+
+- **Methods:**
+  - `xhr.open(method, url, async)`: Initializes the request.
+  - `xhr.send(body)`: Sends the request. If the request method is `GET`, the body should be `null`.
+  - `xhr.setRequestHeader(header, value)`: Sets the value of an HTTP request header. Must be called after `open()` but before `send()`.
+  - `xhr.abort()`: Aborts the request if it has already been sent.
+
+#### Handling POST Requests
+
+When sending data to the server, you often use the `POST` method. Here’s an example of a `POST` request:
+
+```javascript
+const xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://api.example.com/data', true);
+xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log('Response:', xhr.responseText);
+    }
+};
+
+const data = JSON.stringify({ key: 'value' });
+xhr.send(data);
+```
+
+**Explanation:**
+- `xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');` sets the request header to inform the server that the data being sent is in JSON format.
+- The `data` variable holds the JSON string that is being sent to the server.
+
+### Using `XMLHttpRequest` to Handle Responses
+
+The `onreadystatechange` event is triggered every time the `readyState` property changes. It's important to check both `xhr.readyState` and `xhr.status` to ensure the request was successful before processing the response.
+
+### Error Handling
+
+You can handle errors by checking the `status` property or by adding an `onerror` event handler.
+
+```javascript
+xhr.onerror = function () {
+    console.error('Request failed');
+};
+```
+
+### Advantages and Disadvantages of `XMLHttpRequest`
+
+**Advantages:**
+- Allows updating parts of a web page without reloading the entire page.
+- Improves user experience by making web applications more responsive.
+- Can send and receive data in various formats, including text, XML, JSON, and more.
+
+**Disadvantages:**
+- Requires careful handling of browser differences and quirks.
+- Can make debugging more challenging due to asynchronous nature.
+- Modern alternatives like `Fetch API` offer a more flexible and powerful approach for many use cases.
