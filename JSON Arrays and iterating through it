@@ -1,0 +1,77 @@
+
+### 1. **Parsing JSON**
+
+First, parse the JSON string to convert it into a JavaScript array.
+
+```javascript
+const jsonString = '[ "apple", "banana", "cherry" ]';
+const jsonArray = JSON.parse(jsonString);
+```
+
+### 2. **Iterating Through JSON Arrays**
+
+#### **Using `for` Loop**
+
+The traditional `for` loop allows you to iterate through the array elements using an index.
+
+```javascript
+for (let i = 0; i < jsonArray.length; i++) {
+    console.log(jsonArray[i]);
+}
+```
+
+#### **Using `for...of` Loop**
+
+The `for...of` loop iterates over the values of the array.
+
+```javascript
+for (const item of jsonArray) {
+    console.log(item);
+}
+```
+
+#### **Using `forEach()` Method**
+
+The `forEach()` method executes a provided function once for each array element.
+
+```javascript
+jsonArray.forEach(item => {
+    console.log(item);
+});
+```
+
+#### **Using `map()` Method**
+
+The `map()` method creates a new array populated with the results of calling a provided function on every element in the calling array. It’s typically used when you want to transform the array.
+
+```javascript
+const upperCaseArray = jsonArray.map(item => item.toUpperCase());
+console.log(upperCaseArray); // Output: [ 'APPLE', 'BANANA', 'CHERRY' ]
+```
+
+#### **Using `filter()` Method**
+
+The `filter()` method creates a new array with all elements that pass the test implemented by the provided function.
+
+```javascript
+const filteredArray = jsonArray.filter(item => item.startsWith('b'));
+console.log(filteredArray); // Output: [ 'banana' ]
+```
+
+#### **Using `find()` Method**
+
+The `find()` method returns the first element in the array that satisfies the provided testing function.
+
+```javascript
+const foundItem = jsonArray.find(item => item === 'banana');
+console.log(foundItem); // Output: 'banana'
+```
+
+#### **Using `reduce()` Method**
+
+The `reduce()` method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+
+```javascript
+const concatenatedString = jsonArray.reduce((acc, item) => acc + item, '');
+console.log(concatenatedString); // Output: 'applebananacherry'
+```
