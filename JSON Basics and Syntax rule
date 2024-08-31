@@ -1,0 +1,54 @@
+JSON (JavaScript Object Notation) is a lightweight data-interchange format that's easy for humans to read and write and easy for machines to parse and generate. Here's a concise overview of JSON syntax rules:
+
+### JSON Syntax Rules
+
+1. **Data Structures**
+   - **Objects**: An unordered collection of key/value pairs. Keys must be strings, and values can be any valid JSON data type. Objects are enclosed in curly braces `{}`.
+   - **Arrays**: An ordered list of values. Values can be any valid JSON data type. Arrays are enclosed in square brackets `[]`.
+
+2. **Data Types**
+   - **String**: Enclosed in double quotes `" "`. Strings can contain Unicode characters and escape sequences.
+   - **Number**: Can be an integer or floating-point number. JSON numbers do not have quotes.
+   - **Object**: An unordered set of key/value pairs. Keys must be strings, and values can be any JSON data type.
+   - **Array**: An ordered list of values. Values can be any JSON data type.
+   - **Boolean**: Either `true` or `false`.
+   - **Null**: Represented by the literal `null`.
+
+3. **String Rules**
+   - Strings must be enclosed in double quotes `"`.
+   - Strings can contain escape sequences, such as `\"` (for a double quote), `\\` (for a backslash), `\b` (for a backspace), `\f` (for a form feed), `\n` (for a newline), `\r` (for a carriage return), and `\t` (for a tab).
+   - Unicode characters can be included using `\u` followed by four hexadecimal digits.
+
+4. **Object Syntax**
+   - An object is represented as `{ "key1": value1, "key2": value2 }`.
+   - Keys must be strings enclosed in double quotes.
+   - Values can be strings, numbers, objects, arrays, booleans, or null.
+   - Key/value pairs are separated by commas.
+
+5. **Array Syntax**
+   - An array is represented as `[ value1, value2, value3 ]`.
+   - Values can be strings, numbers, objects, arrays, booleans, or null.
+   - Values are separated by commas.
+
+6. **General Rules**
+   - **Whitespace**: JSON can include whitespace (spaces, tabs, and newlines) to improve readability, and it is ignored during parsing.
+   - **Comma**: No trailing comma is allowed at the end of an object or array.
+
+### Example of JSON Syntax
+
+Here's an example of a valid JSON document:
+
+```json
+{
+  "name": "John Doe",
+  "age": 30,
+  "isStudent": false,
+  "address": {
+    "street": "123 Main St",
+    "city": "Anytown",
+    "zip": "12345"
+  },
+  "courses": ["Math", "Science", "History"],
+  "graduationYear": null
+}
+```
