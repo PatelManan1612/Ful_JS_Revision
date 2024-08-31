@@ -1,0 +1,53 @@
+
+### 1. **Parsing JSON**
+
+First, you need to parse a JSON string to convert it into a JavaScript object.
+
+```javascript
+const jsonString = '{"name": "John", "age": 30, "city": "New York"}';
+const jsonObject = JSON.parse(jsonString);
+```
+
+### 2. **Iterating Through JSON Objects**
+
+#### **Using `for...in` Loop**
+
+The `for...in` loop iterates over the enumerable properties of an object.
+
+```javascript
+for (const key in jsonObject) {
+    if (jsonObject.hasOwnProperty(key)) { // Check if key is a direct property of the object
+        console.log(key + ": " + jsonObject[key]);
+    }
+}
+```
+
+#### **Using `Object.keys()` with `forEach()`**
+
+`Object.keys()` returns an array of the object's own enumerable property names. You can then use `forEach()` to iterate over these keys.
+
+```javascript
+Object.keys(jsonObject).forEach(key => {
+    console.log(key + ": " + jsonObject[key]);
+});
+```
+
+#### **Using `Object.entries()` with `forEach()`**
+
+`Object.entries()` returns an array of `[key, value]` pairs. You can use `forEach()` to iterate over these pairs.
+
+```javascript
+Object.entries(jsonObject).forEach(([key, value]) => {
+    console.log(key + ": " + value);
+});
+```
+
+#### **Using `Object.values()` with `forEach()`**
+
+`Object.values()` returns an array of the object's own enumerable property values. You can use `forEach()` to iterate over these values.
+
+```javascript
+Object.values(jsonObject).forEach(value => {
+    console.log(value);
+});
+```
