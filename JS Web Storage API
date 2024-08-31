@@ -1,0 +1,98 @@
+The Web Storage API provides mechanisms by which browsers can store key/value pairs locally within a user's browser. It's split into two storage types: `localStorage` and `sessionStorage`.
+
+### Local Storage
+
+- **`localStorage`** allows you to store data with no expiration date. This data persists even after the browser is closed and reopened.
+
+#### Methods:
+
+1. **`setItem(key, value)`**
+   - **Description:** Adds a key-value pair to `localStorage`. If the key already exists, the value is updated.
+   - **Example:**
+     ```javascript
+     localStorage.setItem('username', 'MananPatel');
+     ```
+
+2. **`getItem(key)`**
+   - **Description:** Retrieves the value associated with the specified key.
+   - **Example:**
+     ```javascript
+     const username = localStorage.getItem('username');
+     console.log(username); // Outputs: MananPatel
+     ```
+
+### Session Storage
+
+- **`sessionStorage`** stores data for one session. The data is lost when the browser tab is closed.
+
+#### Methods:
+
+1. **`setItem(key, value)`**
+   - **Description:** Adds a key-value pair to `sessionStorage`. If the key already exists, the value is updated.
+   - **Example:**
+     ```javascript
+     sessionStorage.setItem('sessionUser', 'MananPatel');
+     ```
+
+2. **`getItem(key)`**
+   - **Description:** Retrieves the value associated with the specified key in `sessionStorage`.
+   - **Example:**
+     ```javascript
+     const sessionUser = sessionStorage.getItem('sessionUser');
+     console.log(sessionUser); // Outputs: MananPatel
+     ```
+
+### Storage Object Properties and Methods
+
+1. **`key(n)`**
+   - **Description:** Returns the name of the nth key in the storage.
+   - **Example:**
+     ```javascript
+     const firstKey = localStorage.key(0);
+     console.log(firstKey); // Outputs the first key name in localStorage
+     ```
+
+2. **`length`**
+   - **Description:** Returns the number of key-value pairs in the storage.
+   - **Example:**
+     ```javascript
+     console.log(localStorage.length); // Outputs the number of items in localStorage
+     ```
+
+3. **`getItem(keyname)`**
+   - **Description:** Returns the value associated with the specified key.
+   - **Example:** Same as above.
+
+4. **`setItem(keyname, value)`**
+   - **Description:** Adds a key-value pair or updates an existing key's value.
+   - **Example:** Same as above.
+
+5. **`removeItem(keyname)`**
+   - **Description:** Removes the key-value pair associated with the specified key.
+   - **Example:**
+     ```javascript
+     localStorage.removeItem('username');
+     ```
+
+6. **`clear()`**
+   - **Description:** Clears all key-value pairs in the storage.
+   - **Example:**
+     ```javascript
+     localStorage.clear();
+     ```
+
+### Related Pages for Web Storage API
+
+1. **`window.localStorage`**
+   - **Description:** Allows you to save key-value pairs in the browser that persist indefinitely, across sessions.
+   - **Example:**
+     ```javascript
+     localStorage.setItem('theme', 'dark');
+     ```
+
+2. **`window.sessionStorage`**
+   - **Description:** Allows you to save key-value pairs in the browser for the duration of the session.
+   - **Example:**
+     ```javascript
+     sessionStorage.setItem('theme', 'light');
+     ```
