@@ -1,0 +1,163 @@
+When parsing JSON data in JavaScript using `JSON.parse()`, different data types in the JSON data are converted into corresponding JavaScript data types.
+
+### 1. JSON String
+
+**JSON Data:**
+
+```json
+"Hello, world!"
+```
+
+**JavaScript Result:**
+
+```javascript
+const jsonString = JSON.parse('"Hello, world!"');
+console.log(typeof jsonString); // "string"
+console.log(jsonString); // "Hello, world!"
+```
+
+### 2. JSON Number
+
+**JSON Data:**
+
+```json
+12345
+```
+
+**JavaScript Result:**
+
+```javascript
+const jsonNumber = JSON.parse('12345');
+console.log(typeof jsonNumber); // "number"
+console.log(jsonNumber); // 12345
+```
+
+### 3. JSON Boolean
+
+**JSON Data:**
+
+```json
+true
+```
+
+**JavaScript Result:**
+
+```javascript
+const jsonBoolean = JSON.parse('true');
+console.log(typeof jsonBoolean); // "boolean"
+console.log(jsonBoolean); // true
+```
+
+### 4. JSON Null
+
+**JSON Data:**
+
+```json
+null
+```
+
+**JavaScript Result:**
+
+```javascript
+const jsonNull = JSON.parse('null');
+console.log(jsonNull); // null
+```
+
+### 5. JSON Object
+
+**JSON Data:**
+
+```json
+{
+  "name": "John",
+  "age": 30,
+  "isStudent": false
+}
+```
+
+**JavaScript Result:**
+
+```javascript
+const jsonObject = JSON.parse('{"name": "John", "age": 30, "isStudent": false}');
+console.log(typeof jsonObject); // "object"
+console.log(jsonObject); 
+// Output: { name: "John", age: 30, isStudent: false }
+```
+
+### 6. JSON Array
+
+**JSON Data:**
+
+```json
+[ "apple", "banana", "cherry" ]
+```
+
+**JavaScript Result:**
+
+```javascript
+const jsonArray = JSON.parse('[ "apple", "banana", "cherry" ]');
+console.log(Array.isArray(jsonArray)); // true
+console.log(jsonArray); // [ "apple", "banana", "cherry" ]
+```
+
+### 7. Nested JSON Objects
+
+**JSON Data:**
+
+```json
+{
+  "person": {
+    "name": "Alice",
+    "age": 25
+  },
+  "hobbies": ["reading", "hiking"]
+}
+```
+
+**JavaScript Result:**
+
+```javascript
+const nestedJsonObject = JSON.parse('{"person": {"name": "Alice", "age": 25}, "hobbies": ["reading", "hiking"]}');
+console.log(typeof nestedJsonObject); // "object"
+console.log(nestedJsonObject);
+// Output: { person: { name: 'Alice', age: 25 }, hobbies: [ 'reading', 'hiking' ] }
+```
+
+### 8. JSON with Escaped Characters
+
+**JSON Data:**
+
+```json
+{
+  "message": "Hello, \"world\"!"
+}
+```
+
+**JavaScript Result:**
+
+```javascript
+const jsonWithEscapes = JSON.parse('{"message": "Hello, \\"world\\"!"}');
+console.log(typeof jsonWithEscapes); // "object"
+console.log(jsonWithEscapes);
+// Output: { message: 'Hello, "world"!' }
+```
+
+### 9. JSON with Unicode Characters
+
+**JSON Data:**
+
+```json
+{
+  "greeting": "こんにちは"
+}
+```
+
+**JavaScript Result:**
+
+```javascript
+const jsonWithUnicode = JSON.parse('{"greeting": "こんにちは"}');
+console.log(typeof jsonWithUnicode); // "object"
+console.log(jsonWithUnicode);
+// Output: { greeting: 'こんにちは' }
+```
+
